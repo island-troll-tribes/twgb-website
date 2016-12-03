@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  botid: 1
+  server: MyString
+  map: MyString
+  datetime: 2016-12-03 14:02:31
+  gamename: MyString
+  ownername: MyString
+  duration: 1
+  gamestate: 1
+  creatorname: MyString
+  creatorserver: MyString
+
+two:
+  botid: 1
+  server: MyString
+  map: MyString
+  datetime: 2016-12-03 14:02:31
+  gamename: MyString
+  ownername: MyString
+  duration: 1
+  gamestate: 1
+  creatorname: MyString
+  creatorserver: MyString

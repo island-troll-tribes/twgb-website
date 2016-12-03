@@ -1,0 +1,67 @@
+<%= form_for(game) do |f| %>
+  <% if game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :botid %>
+    <%= f.number_field :botid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :server %>
+    <%= f.text_field :server %>
+  </div>
+
+  <div class="field">
+    <%= f.label :map %>
+    <%= f.text_field :map %>
+  </div>
+
+  <div class="field">
+    <%= f.label :datetime %>
+    <%= f.datetime_select :datetime %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gamename %>
+    <%= f.text_field :gamename %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ownername %>
+    <%= f.text_field :ownername %>
+  </div>
+
+  <div class="field">
+    <%= f.label :duration %>
+    <%= f.number_field :duration %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gamestate %>
+    <%= f.number_field :gamestate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :creatorname %>
+    <%= f.text_field :creatorname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :creatorserver %>
+    <%= f.text_field :creatorserver %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

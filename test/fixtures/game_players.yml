@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  botid: 1
+  gameid: 1
+  name: MyString
+  ip: MyString
+  spoofed: 1
+  reserved: 1
+  loadingtime: 1
+  left: 1
+  leftreason: MyString
+  team: 1
+  color: 1
+  spoofedrealm: MyString
+
+two:
+  botid: 1
+  gameid: 1
+  name: MyString
+  ip: MyString
+  spoofed: 1
+  reserved: 1
+  loadingtime: 1
+  left: 1
+  leftreason: MyString
+  team: 1
+  color: 1
+  spoofedrealm: MyString

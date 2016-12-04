@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  botid: 1
+  category: MyString
+  gameid: 1
+  pid: 1
+  name: MyString
+  flag: MyString
+  leaver: MyString
+  practicing: MyString
+
+two:
+  id: 1
+  botid: 1
+  category: MyString
+  gameid: 1
+  pid: 1
+  name: MyString
+  flag: MyString
+  leaver: MyString
+  practicing: MyString

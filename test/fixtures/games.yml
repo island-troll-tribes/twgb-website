@@ -4,7 +4,7 @@ one:
   botid: 1
   server: MyString
   map: MyString
-  datetime: 2016-12-03 14:02:31
+  datetime: 2016-12-03 20:11:35
   gamename: MyString
   ownername: MyString
   duration: 1
@@ -16,7 +16,7 @@ two:
   botid: 1
   server: MyString
   map: MyString
-  datetime: 2016-12-03 14:02:31
+  datetime: 2016-12-03 20:11:35
   gamename: MyString
   ownername: MyString
   duration: 1

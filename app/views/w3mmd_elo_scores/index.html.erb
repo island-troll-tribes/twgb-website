@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>W3mmd Elo Scores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Name</th>
+      <th>Server</th>
+      <th>Score</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @w3mmd_elo_scores.each do |w3mmd_elo_score| %>
+      <tr>
+        <td><%= w3mmd_elo_score.category %></td>
+        <td><%= w3mmd_elo_score.name %></td>
+        <td><%= w3mmd_elo_score.server %></td>
+        <td><%= w3mmd_elo_score.score %></td>
+        <td><%= link_to 'Show', w3mmd_elo_score %></td>
+        <td><%= link_to 'Edit', edit_w3mmd_elo_score_path(w3mmd_elo_score) %></td>
+        <td><%= link_to 'Destroy', w3mmd_elo_score, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New W3mmd Elo Score', new_w3mmd_elo_score_path %>

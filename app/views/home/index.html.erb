@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Winter 2016 1v1 League Standings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @w3mmd_elo_scores.each do |w3mmd_elo_score| %>
+      <tr>
+        <td><%= w3mmd_elo_score.name %>@<%= w3mmd_elo_score.server %></td>
+        <td><%= w3mmd_elo_score.score %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -13,7 +13,7 @@
   <tbody>
     <% @w3mmd_elo_scores.each do |w3mmd_elo_score| %>
       <tr>
-        <td><%= w3mmd_elo_score.name %></td>
+        <td><%= link_to w3mmd_elo_score.name, controller: :players, action: :show, name: w3mmd_elo_score.name %></td>
         <td><%= w3mmd_elo_score.score %></td>
       </tr>
     <% end %>

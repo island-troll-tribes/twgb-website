@@ -19,7 +19,7 @@
       <tr>
         <td><%= game['gameid'] %></td>
         <td><%= game['result'] %></td>
-        <td><%= game['opponent'] %></td>
+        <td><%= link_to game['opponent'], controller: :players, action: :show, name: game['opponent'] %></td>
         <td><%= (game['p1_class'] or '').match(/_(.*)"/) { |m| m[1].gsub('_', ' ').downcase } %> <%= if game['p1_random'] then '(random)' end %></td>
         <td><%= (game['p2_class'] or '').match(/_(.*)"/) { |m| m[1].gsub('_', ' ').downcase } %> <%= if game['p1_random'] then '(random)' end %></td>
       </tr>

@@ -17,11 +17,11 @@
   <tbody>
     <% @games.each do |game| %>
       <tr>
-        <th><%= game['gameid'] %></th>
-        <th><%= game['result'] %></th>
-        <th><%= game['opponent'] %></th>
-        <th><%= (game['p1_class'] or '').match(/_(.*)"/) { |m| m[1].gsub('_', ' ').downcase } %> <%= if game['p1_random'] then '(random)' end %></th>
-        <th><%= (game['p2_class'] or '').match(/_(.*)"/) { |m| m[1].gsub('_', ' ').downcase } %> <%= if game['p1_random'] then '(random)' end %></th>
+        <td><%= game['gameid'] %></td>
+        <td><%= game['result'] %></td>
+        <td><%= game['opponent'] %></td>
+        <td><%= (game['p1_class'] or '').match(/_(.*)"/) { |m| m[1].gsub('_', ' ').downcase } %> <%= if game['p1_random'] tden '(random)' end %></td>
+        <td><%= (game['p2_class'] or '').match(/_(.*)"/) { |m| m[1].gsub('_', ' ').downcase } %> <%= if game['p1_random'] tden '(random)' end %></td>
       </tr>
     <% end %>
   </tbody>

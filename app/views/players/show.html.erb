@@ -22,7 +22,7 @@
         <td><%= game['result'] %></td>
         <td><%= link_to game['opponent'], controller: :players, action: :show, name: game['opponent'] %></td>
         <td>
-          <%= if game['elochange'] or 0 > 0 then "+" end %><%= game['elochange'] or '' %></td>
+          <%= if (game['elochange'] or 0) > 0 then "+" end %><%= game['elochange'] or '' %></td>
         <td><%= (game['p1_class'] or '').match(/_(.*)"/) { |m| m[1].gsub('_', ' ').downcase } %> <%= if game['p1_random'] then '(random)' end %></td>
         <td><%= (game['p2_class'] or '').match(/_(.*)"/) { |m| m[1].gsub('_', ' ').downcase } %> <%= if game['p1_random'] then '(random)' end %></td>
       </tr>

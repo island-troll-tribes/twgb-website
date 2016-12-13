@@ -15,6 +15,7 @@ class PlayersController < ApplicationController
            SELECT
              p1.gameid gameid,
              p1.flag result,
+             p1.elochange elochange,
              c1.value_string p1_class,
              r1.value_int p1_random,
              p2.name opponent,

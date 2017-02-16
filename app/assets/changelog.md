@@ -1,29 +1,44 @@
 # Island Troll Tribes Change Log
 
 
+## Change Log for v2.99c
+
+ - Fixed troll dieing immediately after revive if controlling player left
+ - When all players on a tribe leave kill all their trolls
+
+## Change Log for v2.99b
+
+ - Fix GoK affecting everyone
+ - Fix disease making meat disappear
+ - Fixed a bug which caused bad lag when spearing someone who has acid bomb
+ - Fixed a bug where spellbook wouldn't be levelled fully if you jumped a level
+ - Fixed a bug where if you used the wronge medallion of courage for super-sub your hero would disappear
+ - Fixed the tooltip for the buff when a unit is affected by Blur
+ - Actually moved scout bush like previous changelog said
+
 ## Change Log for v2.99a
 
- - Blowgun is now loadable
- - AMS is now learned at level 4
+ - Blowgun is now loadable in armory
+ - Priest's AMS is now learned at level 4
  - Omni cure potion can now be made
  - Tracker beacon can now be cured and isn't removed from sub
  - Escape Artist now learns jump at level 4
- - Cure now removes poison spear and acid bomb
+ - Cure now removes any poison spear and acid bomb buffs
  - Ensnare trap can't be built upon
- - Bears and wolves are stronger, they run faster
+ - Bears and Wolves are stronger, they run faster
  - Blur evasion increased from 20% to 25%
- - EMP no longer prevents items from being moved out of mud hut
- - Clay explosion reduced from 6-15 wards and 5000 squared area to 6-10 and 3000 squared area
+ - EMP no longer prevents items from being moved out of Mud Hut
+ - Clay Explosion reduced from 6-15 wards and 5000 squared area to 6-10 and 3000 squared area
  - Juggernaut damage reduction reduced from 45% to 20% chance
  - Movement speed changes for Contortionist (310->325), Herb Master (325->310), Warrior (320->330), Tracker(350->340)
  - Stupefying field now affects Hypnotist as well
  - Nether amplification reduced to 140%
  - Nets duration on heros reduced to 2.5 seconds
- - Tents now sell for 11 g and have vision
- - Darkspear mana drain no longer goes through sheild spell block
- - Spears no longer return if they are blocked by spell
+ - Tents now sell for 11 gold and have vision
+ - Darkspear mana drain no longer goes through shield spell-block
+ - Spears no longer return if they are blocked by shield
  - Gem of Knowledge fixed
- - Spellbooks are automatically leveled to prevent exploits
+ - Spellbooks are automatically levelled to prevent exploits
 
 ## Change Log for v2.98a
 
@@ -408,5 +423,4 @@
  - Added base materials, and "low level items" to trade zepp
  - Gave some trees in game a chance to drop Artifact type gear, 3% chance to drop, only 2 trees in game have this chance
  - Added ALL scroll spells to scroll boat
-
 

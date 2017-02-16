@@ -1,12 +1,12 @@
 # Island Troll Tribes Change Log
 
 
-## Change Log for v2.99c
+## v2.99c
 
  - Fixed troll dieing immediately after revive if controlling player left
  - When all players on a tribe leave kill all their trolls
 
-## Change Log for v2.99b
+## v2.99b
 
  - Fix GoK affecting everyone
  - Fix disease making meat disappear
@@ -16,7 +16,7 @@
  - Fixed the tooltip for the buff when a unit is affected by Blur
  - Actually moved scout bush like previous changelog said
 
-## Change Log for v2.99a
+## v2.99a
 
  - Blowgun is now loadable in armory
  - Priest's AMS is now learned at level 4
@@ -40,7 +40,7 @@
  - Gem of Knowledge fixed
  - Spellbooks are automatically levelled to prevent exploits
 
-## Change Log for v2.98a
+## v2.98a
 
  - Added a start with fire mode (-sf)
  - Coats now give strength
@@ -61,7 +61,7 @@
  - Fixed the 'invalid player' message showing up
  - Tame now has a hotkey
 
-## Change Log for v2.97a
+## v2.97a
 
  - EMP now effects mud hut
  - Horn now has hotkeys for the spellbook abilities (Q/W/E)
@@ -81,43 +81,43 @@
  - Fixed duel arena bug
  - Added -rn back -- NoCoOkIe4U :)
 
-## Change Log for v2.96a
+## v2.96a
 
  - Mage now has 3 slots (and its subclasses)
  - Stupefy cooldown increased to 60 s
  - Jealousy duration reduced to 10 s
 
-## Change Log for v2.95g
+## v2.95g
 
  - Added a 1v1 mode which uses all standard modes for 1v1 (HCL 1)
  - Fixed w3mmd winner/loser reporting
  - Removed -cn/-rn commands
 
-## Change Log for v2.95f
+## v2.95f
 
  - Fixed forced duel spawning opposing teams together
 
-## Change Log for v2.95e
+## v2.95e
 
  - Fixed forced duel not transporting some characters
 
-## Change Log for v2.95d
+## v2.95d
 
  - Fixed forced duel crashing game
  - No more mage fire in duel arena
  - No more barrels in duel arena
  - Replaced south-western most panther with a The One
 
-## Change Log for v2.95c
+## v2.95c
 
  - Fixed smoked meat stacking to 15
 
-## Change Log for v2.95b
+## v2.95b
 
  - You will now spawn with your team in the duel arena (but location is still random)
  - Fix people spawning on wall of duel arena in forced duel
 
-## Change Log for v2.95a
+## v2.95a
 
  - Reduce cost of all buildings sold on ships by 3 gold
  - Reduce cost of snare to 5 gold
@@ -135,15 +135,15 @@
  - You can only carry one stack of smoked meat
  - Fervor potion recipe now requires at least two different special herbs (2 1 b or 1 1 1 b)
 
-## Change Log for v2.94c
+## v2.94c
 
  - Fix spirit ward
 
-## Change Log for v2.94b
+## v2.94b
 
  - Fixed battle axe not being able to cut trees
 
-## Change Log for v2.94a
+## v2.94a
 
  - SE and NE have switched order in game lobby
  - Added mode for mandatory duel time limit
@@ -162,12 +162,12 @@
  - Fixed game timer and stats board
  - Fixed -sc
 
-## Change Log for v2.93c
+## v2.93c
 
  - Fixed -all class
  - Fixed metronome
 
-## Change Log for v2.93b
+## v2.93b
 
  - Fixed map name
  - Fixed -repick with random
@@ -175,14 +175,14 @@
  - Fixed missing timer/team stats board
  - Fixed what happens to recipe island when "-no trees" is enabled
 
-## Change Log for v2.93a
+## v2.93a
 
  - Fixed hints system
  - Fixed 6v6
  - Added FFA, 2s, 3s
  - Fixed thief being able to use boots
 
-## Change Log for v2.92b
+## v2.92b
 
  - Fixed weird pathing related to selling items at stop directly between NE and SE islands
  - Reduced cost of blowgun from 8 to 5
@@ -204,7 +204,7 @@
  - Thief may no longer use anabolic boots
  - Fixed ward bug (if the ward was killed while you were reviving your team could no longer revive)
 
-## Change Log for v2.92a
+## v2.92a
 
  - New terrain between NE and NW islands
  - Changed the terrain on upper left side of NW island
@@ -214,7 +214,7 @@
  - Fixed (hopefully) ships getting stuck at certain destinations
  - Trade ships now come in a fixed order and there are a total of 6 variations
 
-## Change Log for v2.91a
+## v2.91a
 
  - Removed Ancient Stone Scroll item from the game
  - Removed Drunken Troll class from the game
@@ -224,12 +224,12 @@
  - You can now get supersub when reaching level 8 of subbed class; getting supersub with the medaillon is still active.
  - Removed Patrol Command to free up some space fixing warrior and juggernaut spell overload by the same occasion
 
-## Change Log for v2.90c
+## v2.90c
 
  - Removed the agile feet ability from steel boots and anabolics boots
  - Anabolic boots movement speed bonus changed from 100 to 200
 
-## Change Log for v2.90b
+## v2.90b
 
  - Fixed the spamming error message, hopefully
  - Reworked Drunken troll and Troll brewmaster
@@ -238,18 +238,18 @@
  - Reworked anabolic boots and steel boots with a new ability: agile feet
  - Changed content sold in boats allowing players to buy the new scrolls and removing entangle scroll/steel ingot
 
-## Change Log for v2.90a
+## v2.90a
 
  - Removed sleep protection reminder unless you've got hints on
  - Added a new class and Two subclass
  - Changed Guard Distance back to normal
  - Fixed Sonar Compass and old selection Glitch
 
-## Change Log for v2.89b
+## v2.89b
 
  - Fix scout ping
 
-## Change Log for v2.89a
+## v2.89a
 
  - Fixed trade ships
  - Randoming is now a separate trackable event from class
@@ -258,27 +258,27 @@
  - Fixed recipes for mana/health potions
  - Made various messages into tips
 
-## Change Log for v2.88g
+## v2.88g
 
  - Fix items from spawning when you sell an item
  - Fix medallion of courage not working
  - Fix timer spam (hopefully)
 
-## Change Log for v2.88f
+## v2.88f
 
  - Add class stats tracking
 
-## Change Log for v2.88e
+## v2.88e
 
  - Fix tent from disappearing when packed
  - Change Camouflage Coat recipe to Magic, Bone Coat, Dark Rock
  - Change Camouflage Coat build location to Witch Doctor's Hut
 
-## Change Log for v2.88d
+## v2.88d
 
  - Fixed camera from losing zoom amount when scrolling in
 
-## Change Log for v2.88c
+## v2.88c
 
  - Amount of additional XP from Gem of Knowledge (GoK) reduced
  - GoK recipe changed
@@ -289,7 +289,7 @@
  - Hint message system fixed
  - Craft Master 5000 fixed
 
-## Change Log for v2.88b
+## v2.88b
 
  - Diseased meat only heals 20 health and doesn't affect the first 10 meat
  - Smoke House recipe changed to Stick, Hide, Clay Ball
@@ -306,7 +306,7 @@
  - No more one shop on the west side of the map to balance it with SE
  - Bug reporting system in game added
 
-## Change Log for v2.88a
+## v2.88a
 
  - Allowed cure all to target enemies
  - Fire and Acid bombs have been removed from boats
@@ -322,7 +322,7 @@
  - Iron Ingots are now set to one per ship, restock rate is now 80 seconds instead of 120 seconds
  - Steel Ingots restock rate is now 140 seconds, up from 120 seconds.
 
-## Change Log for v2.87b
+## v2.87b
 
  - Added fix to w3mmd to fix tracking of mage kills
  - Removed diseases ability to disease meat for now
@@ -336,7 +336,7 @@
  - Diseased Meat still occurs.
  - Special Herbs can no longer be sold.
 
-## Change Log for v2.87a
+## v2.87a
 
  - Lowered Ingot Costs by 3 gold.
  - Increased Iron Shield cost from 20 to 46
@@ -344,7 +344,7 @@
  - Changed Ward Bomb Limit from 20 to 10 bombs in a range of 350 of each other.
  - Set Acid Bomb to Disease cooldown group
 
-## Change Log for v2.86b
+## v2.86b
 
  - Revamped and cleaned up more stuff dealing with HCL for the host bot runners. (Full HCL list can be obtained at the ITT Forums)
  - Removed Defense Ward from trade merchant since it is now an "Over Powered Item"
@@ -354,31 +354,31 @@
  - Changed cost of Iron Axe from 17g to 25g
  - Changed cost of Steel Axe from 40g to 48g
 
-## Change Log for v2.86a
+## v2.86a
 
  - Removed Spell Block from Basic Shield, Bone Shield, and Iron Shield
  - Increased Cool Down of Spell Block on Steel Shield and Battle Shield from 40 seconds to 75 seconds.
  - Added trigger to prevent over-use of ward bombing, wards are now limited to 20 wards in a 500 AOE range of each other. -Credit to Windflamedmon for the triggering/idea.
  - Disabled creation of all items added since 2.52a, use the -op  mode at game start to enable op items, op items are listed in recipi list.
 
-## Change Log for v2.85c
+## v2.85c
 
  - Fixed gaining vision of merchant on far left when standing in a certain position.
  - Fixed Napalm glitch that involved the stack and split system.
 
-## Change Log for v2.85b
+## v2.85b
 
  - Disabled w3mmd system entirely
  - Disabled Anti-Sleep system entirely
 
-## Change Log for v2.85a
+## v2.85a
 
  - Removed Panther Hide
  - Fixed botton The One to full health
  - Buffed camo coat just slightly
  - Removed easter eggs, cheese.
 
-## Change Log for v2.84b
+## v2.84b
 
  - Changed TeleGather trigger so it should cast properly for omnigatherers telegath
  - Re-Added Item Tree Drops
@@ -387,13 +387,13 @@
  - Polished up battle suit
  - Special Herbs can now be sold for 5 gold each instead of 10
 
-## Change Log for v2.84a
+## v2.84a
 
  - Added Troll Burrow, offers early to mid game defense, build it by collecting tinder/stick/stone/hide
  - Removed Items that drop from trees
  - Changed Shield Recipie in armory
 
-## Change Log for v2.83c
+## v2.83c
 
  - Changed Battle Suit name to Tyrande's Battle Suit
  - Changed Battle Suit Recipie to Steel Axe, Steel Ingot, Steel Ingot, Steel Ingot, Spirit of Wind, Spirit of Water
@@ -404,11 +404,11 @@
  - Buffed Napalm damage, and increased range from 200 to 250.
  - Increased the HP of trees that drop items from 120 to 250.
 
-## Change Log for v2.83b
+## v2.83b
 
  - Fixed being able to carry both battle shield and battle axe, can now only carry one or the other.
 
-## Change Log for v2.83a
+## v2.83a
 
  - Increased stupifey cooldown from 20 seconds to 30 seconds
  - Added Silence to Battle Suit

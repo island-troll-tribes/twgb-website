@@ -1,0 +1,24 @@
+p id="notice"
+  = notice
+
+h1 Games
+
+table style="width: 100%"
+  thead
+    tr
+      th Map
+      th Datetime
+      th Gamename
+      th Duration
+      th
+    tr
+  thead
+
+  tbody
+    - @games.each do |game|
+      tr
+        td= game.map.split('\\').last
+        td= game.datetime
+        td= game.gamename
+        td= game.duration
+        td= link_to 'Show', game

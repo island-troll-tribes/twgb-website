@@ -1,11 +1,13 @@
 class PlayersController < ApplicationController
   def show
+    category = '2017_1v1_league'
+
     @name = params[:name].downcase
 
-    @elo = W3mmdEloScore.where(name: @name, category: '2016_1v1_league').first.score
+    @elo = W3mmdEloScore.where(name: @name, category: category).first.score
 
     @record = W3mmdPlayer.
-      where(name: @name, category: '2016_1v1_league').
+      where(name: @name, category: category).
       group('flag').
       count
 
@@ -45,7 +47,7 @@ class PlayersController < ApplicationController
              r2.varname = 'random'
            WHERE
              p1.name = '#{@name}' AND
-             p1.category = '2016_1v1_league'
+             p1.category = '#{category}'
            ORDER BY
              p1.gameid DESC
       )).to_hash

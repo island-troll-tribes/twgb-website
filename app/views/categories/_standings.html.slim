@@ -1,0 +1,21 @@
+table.full-width
+  thead
+    tr
+      th Rank
+      th Name
+      th Server
+      th Score
+      th Wins
+      th Losses
+      th Percent
+
+  tbody
+    - @w3mmd_elo_scores.each_with_index do |s, i|
+      tr
+        td= i
+        td= link_to s.name, category_player_path(@category, s.name)
+        td= s.server
+        td.number= '%.2f' % s.score
+        td.number= s.wins
+        td.number= s.losses
+        td.number= '%.2f' % (s.wins * 100.0 / (s.losses + s.wins))

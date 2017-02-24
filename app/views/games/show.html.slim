@@ -1,0 +1,42 @@
+p#notice= notice
+
+table
+  tbody
+    tr
+      td: strong ID
+      td= @game.id
+    tr
+      td: strong Date
+      td= @game.datetime
+    tr
+      td: strong Name
+      td= @game.gamename
+    tr
+      td: strong Duration
+      td= distance_of_time_in_words @game.duration
+    tr
+      td: strong Map
+      td= @game.map
+    tr
+      td: strong Owner
+      td= @game.ownername
+
+table style="width:100%; text-align:left"
+  thead
+    tr
+      th Color
+      th Player
+      th Result
+      th ELO Change
+      th Class
+
+  tbody
+    - @game.w3mmd_players.includes(:w3mmd_vars).order(:pid).each do |player|
+      tr
+        td= player.pid
+        td= link_to player.name, category_player_path(player.category, player.name)
+        td= player.flag
+        td
+          - if player.elochange
+            = "%+.2f" % player.elochange
+        td= player.troll_class

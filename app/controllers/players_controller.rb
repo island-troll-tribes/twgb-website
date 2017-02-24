@@ -1,16 +1,23 @@
 class PlayersController < ApplicationController
   def show
-    category = '2017_1v1_league'
-
+    @category = params[:category_name]
     @name = params[:name].downcase
 
-    @elo = W3mmdEloScore.where(name: @name, category: category).first.score
+    @record = W3mmdEloScore.where(name: @name, category: @category).first
 
-    @record = W3mmdPlayer.
-      where(name: @name, category: category).
-      group('flag').
-      count
+    if @category.include? '1v1'
+      show_1v1
+      return
+    end
 
+    @games = W3mmdPlayer
+      .includes(:game)
+      .where(name: @name, category: @category)
+      .where.not(flag: '')
+      .order(id: :desc)
+  end
+
+  def show_1v1
     @games = W3mmdPlayer.
       connection.
       select_all(%Q(
@@ -47,9 +54,11 @@ class PlayersController < ApplicationController
              r2.varname = 'random'
            WHERE
              p1.name = '#{@name}' AND
-             p1.category = '#{category}'
+             p1.category = '#{@category}'
            ORDER BY
              p1.gameid DESC
       )).to_hash
+
+      render 'show_1v1'
   end
 end

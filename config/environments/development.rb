@@ -54,5 +54,5 @@ Rails.application.configure do
 
   # Luna Ghost
   config.lunaghost_email = ENV['LUNAGHOST_EMAIL']
-  config.lunaghost_password = ENV['LUNAGHOST_EMAIL']
+  config.lunaghost_password = ENV['LUNAGHOST_PASSWORD']
 end

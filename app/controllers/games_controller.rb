@@ -12,11 +12,13 @@ class GamesController < ApplicationController
     agent = Mechanize.new
     page = agent.get('https://www.lunaghost.com/panel/index.php')
     login = page.form
-    login.email = config.lunaghost_email
-    login.password = config.lunaghost_password
+    login.email = Rails.application.config.lunaghost_email
+    login.password = Rails.application.config.lunaghost_password
     agent.submit(login, login.buttons.first)
+    agent.page.links[3].click
+    agent.page.links.last.click
     data = agent.get_file("http://ny1.lunaghost.com/panel/ghost/replay.php?id=695&action=download&replay=#{params[:id]}.w3g")
-    send_data data, filename: params[:id] + '.w3g', type: "application/octet-stream", disposition: 'inline', stream: 'true'
+    send_data data, filename: params[:id] + '.w3g', disposition: :attachment
   end
 
   private

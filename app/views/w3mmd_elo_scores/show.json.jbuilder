@@ -1,1 +1,0 @@
-json.partial! "w3mmd_elo_scores/w3mmd_elo_score", w3mmd_elo_score: @w3mmd_elo_score

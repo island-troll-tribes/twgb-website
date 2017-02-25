@@ -1,1 +1,0 @@
-json.array! @w3mmd_elo_scores, partial: 'w3mmd_elo_scores/w3mmd_elo_score', as: :w3mmd_elo_score

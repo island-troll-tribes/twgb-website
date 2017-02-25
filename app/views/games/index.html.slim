@@ -1,24 +1,26 @@
-p id="notice"
-  = notice
-
-h1 Games
+h2 Last 50 Games
 
 table style="width: 100%"
   thead
     tr
-      th Map
+      th ID
       th Datetime
-      th Gamename
+      th Name
+      th Category
       th Duration
-      th
-    tr
-  thead
+      th Map
+      th Owner
 
   tbody
     - @games.each do |game|
+      - category = game.w3mmd_players.first.try(:category)
       tr
-        td= game.map.split('\\').last
+        td= link_to game.id, game_path(game)
         td= game.datetime
         td= game.gamename
-        td= game.duration
-        td= link_to 'Show', game
+        td
+          - if category
+            = link_to category, category_path(category)
+        td= distance_of_time_in_words game.duration
+        td= game.map.split('\\').last
+        td= game.ownername

@@ -19,7 +19,7 @@ default: &default
 
 development:
   <<: *default
-  database: rogersdb
+  url: <%= ENV['DATABASE_URL'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -49,6 +49,3 @@ test:
 #
 production:
   <<: *default
-  database: twgb_production
-  username: twgb
-  password: <%= ENV['TWGB_DATABASE_PASSWORD'] %>

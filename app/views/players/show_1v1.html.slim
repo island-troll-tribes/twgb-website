@@ -2,7 +2,10 @@ p#id= notice
 
 h2= link_to @category.gsub('_', ' '), category_path(@category)
 h3 Player Stats: #{@name}
-h4 ELO: #{@record.score}, W/L: #{@record.wins}/#{@record.losses}
+h4
+  | ELO: #{@record.score},
+  |  W/L: #{@record.wins}/#{@record.losses},
+  |  #{'%.2f' % @record.percent}%
 
 table style="width:100%; text-align:left"
   thead

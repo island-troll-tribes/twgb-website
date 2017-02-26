@@ -18,7 +18,12 @@ class GamesController < ApplicationController
     agent.page.links[3].click
     agent.page.links.last.click
     data = agent.get_file("http://ny1.lunaghost.com/panel/ghost/replay.php?id=695&action=download&replay=#{params[:id]}.w3g")
-    send_data data, filename: params[:id] + '.w3g', disposition: :attachment
+
+    if data.empty?
+      raise ActionController::RoutingError.new('Replay expired')
+    else
+      send_data data, filename: params[:id] + '.w3g', disposition: :attachment
+    end
   end
 
   private

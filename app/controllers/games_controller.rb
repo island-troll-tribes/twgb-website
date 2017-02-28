@@ -6,6 +6,7 @@ class GamesController < ApplicationController
   end
 
   def show
+    @players = @game.w3mmd_players.includes(:w3mmd_vars).order(:pid)
   end
 
   def replay

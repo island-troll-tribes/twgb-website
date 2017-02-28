@@ -21,6 +21,9 @@ table
       td: strong Owner
       td= @game.ownername
     tr
+      td: strong Category
+      td= link_to @player.first.category, category_path(@player.first.category)
+    tr
       td: strong Replay
       td= link_to "Download", replay_of_game_path(@game.id), target: :_blank
 
@@ -34,7 +37,7 @@ table style="width:100%; text-align:left"
       th Class
 
   tbody
-    - @game.w3mmd_players.includes(:w3mmd_vars).order(:pid).each do |player|
+    - @players.each do |player|
       tr
         td= player.pid
         td= link_to player.name, category_player_path(player.category, player.name)

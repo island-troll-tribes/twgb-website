@@ -18,6 +18,9 @@ table
       td: strong Map
       td= @game.map.split('\\').last
     tr
+      td: strong Creator
+      td= @game.creatoname
+    tr
       td: strong Owner
       td= @game.ownername
     tr
@@ -39,10 +42,10 @@ table style="width:100%; text-align:left"
   tbody
     - @players.each do |player|
       tr
-        td= player.pid
+        td.number= player.pid
         td= link_to player.name, category_player_path(player.category, player.name)
         td= player.flag
-        td
+        td.number
           - if player.elochange
             = "%+.2f" % player.elochange
         td= player.troll_class

@@ -20,10 +20,10 @@ table style="width:100%; text-align:left"
   tbody
     - @games.each do |game|
       tr
-        td= link_to game['gameid'], game_path(game['gameid'])
+        td.number= link_to game['gameid'], game_path(game['gameid'])
         td= game['result']
         td= link_to game['opponent'], category_player_path(@category, game['opponent'])
-        td
+        td.number
           - if game['elochange']
             = "%+.2f" % game['elochange']
         td

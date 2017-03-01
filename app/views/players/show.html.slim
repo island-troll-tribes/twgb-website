@@ -15,7 +15,7 @@ table style="width:100%; text-align:left"
   tbody
     - @games.each do |game|
       tr
-        td.number= link_to game.gameid, game_path(game.gameid)
+        td= link_to game.gameid, game_path(game.gameid)
         td= game.flag
         td.number
           - if game.elochange

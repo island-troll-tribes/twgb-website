@@ -54,7 +54,7 @@ class PlayersController < ApplicationController
              r2.varname = 'random'
            WHERE
              p1.name = '#{@name}' AND
-             p1.category = '#{@category}'
+             p1.category = '#{@category}' AND
              p1.flag <> ''
            ORDER BY
              p1.gameid DESC

@@ -55,7 +55,7 @@ class PlayersController < ApplicationController
            WHERE
              p1.name = '#{@name}' AND
              p1.category = '#{@category}'
-             p1.flag != ''
+             p1.flag <> ''
            ORDER BY
              p1.gameid DESC
       )).to_hash

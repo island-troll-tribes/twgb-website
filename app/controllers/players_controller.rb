@@ -33,7 +33,7 @@ class PlayersController < ApplicationController
            FROM w3mmdplayers p1
            INNER JOIN w3mmdplayers p2 ON
              p1.gameid = p2.gameid AND
-             p1.flag != p2.flag
+             p1.pid != p2.pid
            LEFT JOIN w3mmdvars c1 ON
              p1.gameid = c1.gameid AND
              p1.pid = c1.pid AND

@@ -1,6 +1,18 @@
 # Island Troll Tribes Change Log
 
 
+## v2.99d
+
+ - Disease potion no longer stacks
+ - Diseaes potion no longer has multiple levels, always does 2 damage per second
+ - With the randomized spawns mode, spawns will be randomized only up to the higest occupied slot's tribe
+ - Start with fire added to standard 1v1 modes
+ - Randomized spawn added to standard 1v1 modes
+ - 35 minute duel is now the standard for 1v1
+ - No horn removed from standard 1v1 modes
+ - When all players on a tribe leave kill all their trolls (hopefully fixed)
+ - 6v6 hcl fixed (e)
+
 ## v2.99c
 
  - Fixed troll dieing immediately after revive if controlling player left

@@ -14,6 +14,7 @@ table style="width:100%; text-align:left"
       th Result
       th Opponent
       th Elo Change
+      th Date
       th Class
       th Opponent Class
 
@@ -26,6 +27,7 @@ table style="width:100%; text-align:left"
         td.number
           - if game['elochange']
             = "%+.2f" % game['elochange']
+        td= game.game.datetime
         td
           = (game['p1_class'] or '').match(/_(.*)"/) { |m| m[1].gsub('_', ' ').downcase }
           - if game['p1_random']

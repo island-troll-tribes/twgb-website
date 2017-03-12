@@ -1,5 +1,5 @@
 class W3mmdVar < ApplicationRecord
   self.table_name = 'w3mmdvars'
 
-  has_many :w3mmd_player, foreign_key: :gameid
+  belongs_to :game, foreign_key: :gameid, inverse_of: :w3mmd_vars
 end

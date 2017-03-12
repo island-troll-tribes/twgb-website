@@ -18,47 +18,11 @@ class PlayersController < ApplicationController
   end
 
   def show_1v1
-    @games = W3mmdPlayer.
-      connection.
-      select_all(%Q(
-           SELECT
-             p1.gameid gameid,
-             p1.flag result,
-             p1.elochange elochange,
-             c1.value_string p1_class,
-             r1.value_int p1_random,
-             p2.name opponent,
-             c2.value_string p2_class,
-             r2.value_int p2_random
-           FROM w3mmdplayers p1
-           INNER JOIN w3mmdplayers p2 ON
-             p1.gameid = p2.gameid AND
-             p1.pid != p2.pid
-           LEFT JOIN w3mmdvars c1 ON
-             p1.gameid = c1.gameid AND
-             p1.pid = c1.pid AND
-             c1.varname = 'class' AND
-             c1.value_string != '""'
-           LEFT JOIN w3mmdvars c2 ON
-             p2.gameid = c2.gameid AND
-             p2.pid = c2.pid AND
-             c2.varname = 'class' AND
-             c2.value_string != '""'
-           LEFT JOIN w3mmdvars r1 ON
-             p1.gameid = r1.gameid AND
-             p1.pid = r1.pid
-             AND r1.varname = 'random'
-           LEFT JOIN w3mmdvars r2 ON
-             p2.gameid = r2.gameid AND
-             p2.pid = r2.pid AND
-             r2.varname = 'random'
-           WHERE
-             p1.name = '#{@name}' AND
-             p1.category = '#{@category}' AND
-             p1.flag <> ''
-           ORDER BY
-             p1.gameid DESC
-      )).to_hash
+    @games = W3mmdPlayer
+      .where(name: @name, category: @category)
+      .where.not(flag: '')
+      .includes(game: [:w3mmd_players, :w3mmd_vars])
+      .order(id: :desc)
 
       render 'show_1v1'
   end

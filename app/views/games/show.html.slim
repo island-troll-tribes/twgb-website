@@ -48,4 +48,7 @@ table style="width:100%; text-align:left"
         td.number
           - if player.elochange
             = "%+.2f" % player.elochange
-        td= player.troll_class
+        td
+          = player.troll_class
+          - if player.random_class
+            | (random)

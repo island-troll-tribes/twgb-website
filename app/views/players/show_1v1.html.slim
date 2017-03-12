@@ -20,19 +20,20 @@ table style="width:100%; text-align:left"
 
   tbody
     - @games.each do |game|
+      - opponent = game.opponents.first
       tr
-        td= link_to game['gameid'], game_path(game['gameid'])
-        td= game['result']
-        td= link_to game['opponent'], category_player_path(@category, game['opponent'])
+        td= link_to game.game.id, game_path(game.game.id)
+        td= game.flag
+        td= link_to opponent.name, category_player_path(@category, opponent.name)
         td.number
-          - if game['elochange']
-            = "%+.2f" % game['elochange']
+          - if game.elochange
+            = "%+.2f" % game.elochange
         td= game.game.datetime
         td
-          = (game['p1_class'] or '').match(/_(.*)"/) { |m| m[1].gsub('_', ' ').downcase }
-          - if game['p1_random']
+          = game.troll_class
+          - if game.random_class
             | (random)
         td
-          = (game['p2_class'] or '').match(/_(.*)"/) { |m| m[1].gsub('_', ' ').downcase }
-          - if game['p2_random']
+          = opponent.troll_class
+          - if opponent.random_class
             | (random)

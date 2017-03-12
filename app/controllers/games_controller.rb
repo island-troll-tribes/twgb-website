@@ -2,11 +2,11 @@ class GamesController < ApplicationController
   before_action :set_game, only: [:show]
 
   def index
-    @games = Game.includes(:w3mmd_players).last(50).reverse
+    @games = Game.includes(:w3mmd_players, :w3mmd_vars).last(50).reverse
   end
 
   def show
-    @players = @game.w3mmd_players.includes(:w3mmd_vars).order(:pid)
+    @players = @game.w3mmd_players.order(:pid).load
   end
 
   def replay

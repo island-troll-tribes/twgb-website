@@ -26,8 +26,8 @@ table
     tr
       td: strong Category
       td
-      - if @players.first.present?
-        = link_to @players.first.category, category_path(@players.first.category)
+        - if @players.first.present?
+          = link_to @players.first.category, category_path(@players.first.category)
     tr
       td: strong Replay
       td= link_to "Download", replay_of_game_path(@game.id), target: :_blank

@@ -25,7 +25,9 @@ table
       td= @game.ownername
     tr
       td: strong Category
-      td= link_to @players.first.try(:category), category_path(@players.first.try(:category))
+      td
+      - if @players.first.present?
+        = link_to @players.first.category, category_path(@players.first.category)
     tr
       td: strong Replay
       td= link_to "Download", replay_of_game_path(@game.id), target: :_blank

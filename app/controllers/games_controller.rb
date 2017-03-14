@@ -10,21 +10,27 @@ class GamesController < ApplicationController
   end
 
   def replay
-    agent = Mechanize.new
-    page = agent.get('https://www.lunaghost.com/panel/index.php')
-    login = page.form
-    login.email = Rails.application.config.lunaghost_email
-    login.password = Rails.application.config.lunaghost_password
-    agent.submit(login, login.buttons.first)
-    agent.page.links[3].click
-    agent.page.links.last.click
-    data = agent.get_file("http://ny1.lunaghost.com/panel/ghost/replay.php?id=695&action=download&replay=#{params[:id]}.w3g")
+    hostname = Rails.application.config.twgb_host_hostname
+    username = Rails.application.config.twgb_host_username
+    pathname = Rails.application.config.twgb_host_pathname
+    ssh_key = Rails.application.config.twgb_host_ssh_key
 
-    if data.empty?
-      raise ActionController::RoutingError.new('Replay expired')
-    else
-      send_data data, filename: params[:id] + '.w3g', disposition: :attachment
+    filename = params[:id] + '.w3g'
+    full_pathname = pathname + filename
+    data = nil
+
+    begin
+      Net::SCP.start hostname, username, key_data: [ssh_key], keys_only: true do |scp|
+        data = scp.download! full_pathname
+      end
+    rescue Net::SCP::Error => e
+      if e.message.include? 'No such file or directory'
+        raise ActionController::RoutingError.new('Replay expired')
+      end
+      raise e
     end
+
+    send_data data, filename: filename, disposition: :attachment
   end
 
   private

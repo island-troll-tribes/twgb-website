@@ -52,7 +52,9 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  # Luna Ghost
-  config.lunaghost_email = ENV['LUNAGHOST_EMAIL']
-  config.lunaghost_password = ENV['LUNAGHOST_PASSWORD']
+  # TwGB[Host]
+  config.twgb_host_hostname = ENV['TWGB_HOST_HOSTNAME']
+  config.twgb_host_username = ENV['TWGB_HOST_USERNAME']
+  config.twgb_host_pathname = ENV['TWGB_HOST_PATHNAME']
+  config.twgb_host_ssh_key = ENV['TWGB_HOST_SSH_KEY']
 end

@@ -84,7 +84,9 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # Luna Ghost
-  config.lunaghost_email = ENV['LUNAGHOST_EMAIL']
-  config.lunaghost_password = ENV['LUNAGHOST_PASSWORD']
+  # TwGB[Host]
+  config.twgb_host_hostname = ENV['TWGB_HOST_HOSTNAME']
+  config.twgb_host_username = ENV['TWGB_HOST_USERNAME']
+  config.twgb_host_password = ENV['TWGB_HOST_PASSWORD']
+  config.twgb_host_pathname = ENV['TWGB_HOST_PATHNAME']
 end

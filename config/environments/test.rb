@@ -40,7 +40,9 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  # Luna Ghost
-  config.lunaghost_email = ''
-  config.lunaghost_password = ''
+  # TwGB[Host]
+  config.twgb_host_hostname = ''
+  config.twgb_host_username = ''
+  config.twgb_host_pathname = ''
+  config.twgb_host_ssh_key = ''
 end

@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'slim-rails', '~> 3.1'
 gem 'redcarpet', '~> 3.4'
-gem 'mechanize', '~> 2.7'
+gem 'net-scp', '~> 1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

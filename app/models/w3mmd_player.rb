@@ -38,7 +38,7 @@ class W3mmdPlayer < ApplicationRecord
 
   def opponents
     game.w3mmd_players.select do |p|
-      p.flag and (p.flag != flag or flag == 'drawer')
+      p.flag and (p.flag != flag or (flag == 'drawer' and p.pid != pid))
     end
   end
 

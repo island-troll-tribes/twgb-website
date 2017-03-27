@@ -24,6 +24,6 @@ class PlayersController < ApplicationController
       .includes(game: [:w3mmd_players, :w3mmd_vars])
       .order(id: :desc)
 
-      render 'show_1v1'
+    render 'show_1v1'
   end
 end

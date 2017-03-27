@@ -24,7 +24,9 @@ table style="width:100%; text-align:left"
       tr
         td= link_to game.game.id, game_path(game.game.id)
         td= game.flag
-        td= link_to opponent.name, category_player_path(@category, opponent.name)
+        td
+          - if opponent.present?
+            = link_to opponent.name, category_player_path(@category, opponent.name)
         td.number
           - if game.elochange
             = "%+.2f" % game.elochange
@@ -34,6 +36,7 @@ table style="width:100%; text-align:left"
           - if game.random_class
             | (random)
         td
-          = opponent.troll_class
-          - if opponent.random_class
-            | (random)
+          - if opponent.present?
+            = opponent.troll_class
+            - if opponent.random_class
+              | (random)

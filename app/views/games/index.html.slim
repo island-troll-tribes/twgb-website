@@ -1,10 +1,28 @@
-h2 Last 50 Games
+h2 Lastest Games
+
+form method="GET"
+  label style="display: inline-block" for="category" Category:
+  select name="category"
+    - @categories.each do |category|
+      option value=category selected=(category == params[:category]) =category
+
+  br
+
+  label style="display: inline-block" for="name" Username:
+  input type="text" name="name" value=params[:name]
+
+  br
+
+  button type="submit" Filter
+
+br
 
 table style="width: 100%"
   thead
     tr
       th ID
       th Datetime
+      th Time ago
       th Name
       th Category
       th Duration
@@ -16,7 +34,8 @@ table style="width: 100%"
       - category = game.w3mmd_players.first.try(:category)
       tr
         td= link_to game.id, game_path(game)
-        td= game.datetime
+        td= game.datetime.to_formatted_s :long
+        td= time_ago_in_words game.datetime
         td= game.gamename
         td
           - if category
@@ -24,3 +43,5 @@ table style="width: 100%"
         td= distance_of_time_in_words game.duration
         td= game.map.split('\\').last
         td= game.ownername
+
+= paginate @games

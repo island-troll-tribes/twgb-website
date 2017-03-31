@@ -2,7 +2,20 @@ class GamesController < ApplicationController
   before_action :set_game, only: [:show]
 
   def index
-    @games = Game.includes(:w3mmd_players, :w3mmd_vars).last(50).reverse
+    @games = Game
+      .includes(:w3mmd_players)
+      .order(id: :desc)
+
+    if params[:category].present?
+      @games = @games.where(w3mmdplayers: { category: params[:category] })
+    end
+
+    if params[:name].present?
+      @games = @games.where(w3mmdplayers: { name: params[:name] })
+    end
+
+    @games = @games.page(params[:page])
+    @categories = [''] + W3mmdPlayer.select(:category).distinct.pluck(:category)
   end
 
   def show

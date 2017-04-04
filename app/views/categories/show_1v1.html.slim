@@ -1,7 +1,10 @@
 p#id= notice
 
-h2= link_to @category.gsub('_', ' '), category_path(@category)
-h3 Player Stats: #{@name}
+h2= link_to @category.gsub('_', ' '), standing_path(@category)
+h3
+  | Player Stats:
+  = ' '
+  = link_to @name, player_path(@name)
 h4
   | ELO: #{@record.score},
   |  W/L: #{@record.wins}/#{@record.losses},
@@ -26,11 +29,11 @@ table style="width:100%; text-align:left"
         td= game.flag
         td
           - if opponent.present?
-            = link_to opponent.name, category_player_path(@category, opponent.name)
+            = link_to opponent.name, player_category_path(opponent.name, @category)
         td.number
           - if game.elochange
             = "%+.2f" % game.elochange
-        td= game.game.datetime
+        td= game.game.datetime.to_formatted_s :short
         td
           = game.troll_class
           - if game.random_class

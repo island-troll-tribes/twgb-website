@@ -5,10 +5,11 @@ Rails.application.routes.draw do
     get :replay, on: :member, as: :replay_of
   end
 
-  resources :categories, only: [:show], param: :name do
-    resources :players, only: [:show], param: :name, :constraints => { :name => /[^\/]+/ }
+  resources :players, only: [:show], param: :name, constraints: { name: /((?:.(?!\.json$))*(?:$|.))/ } do
+    resources :categories, only: [:show], param: :name
   end
 
-  get '/players/:name', to: 'players#show_1v1', :constraints => { :name => /[^\/]+/ }
+  resources :standings, only: [:show, :index], param: :name
+
   get '/changelog', to: 'home#changelog', as: 'changelog'
 end

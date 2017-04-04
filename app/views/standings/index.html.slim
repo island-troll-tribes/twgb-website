@@ -1,0 +1,5 @@
+h2 Standings
+
+ul
+  - @categories.each do |category|
+    li= link_to category, standing_path(category)

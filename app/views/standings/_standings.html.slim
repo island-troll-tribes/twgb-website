@@ -13,7 +13,7 @@ table.full-width
     - @w3mmd_elo_scores.each_with_index do |s, i|
       tr
         td.number= i + 1
-        td= link_to s.name, category_player_path(@category, s.name)
+        td= link_to s.name, player_category_path(s.name, @category)
         td= s.server
         td.number= '%.2f' % s.score
         td.number= s.wins

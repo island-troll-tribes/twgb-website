@@ -27,7 +27,7 @@ table
       td: strong Category
       td
         - if @players.first.present?
-          = link_to @players.first.category, category_path(@players.first.category)
+          = link_to @players.first.category, standing_path(@players.first.category)
     tr
       td: strong Replay
       td= link_to "Download", replay_of_game_path(@game.id), target: :_blank
@@ -46,7 +46,7 @@ table
       - @players.each do |player|
         tr
           td.number= player.pid
-          td= link_to player.name, category_player_path(player.category, player.name)
+          td= link_to player.name, player_category_path(player.category, player.name)
           td= player.flag
           td.number
             - if player.elochange

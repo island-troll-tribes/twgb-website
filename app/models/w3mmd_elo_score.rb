@@ -6,7 +6,7 @@ class W3mmdEloScore < ApplicationRecord
   def rank
     self.class
       .where(category: category)
-      .where("score >= ?", score)
-      .count
+      .where("score > ?", score)
+      .count + 1
   end
 end

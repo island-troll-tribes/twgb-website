@@ -4,7 +4,7 @@ class GamesController < ApplicationController
   def index
     @games = Game
       .includes(:w3mmd_players)
-      .load(:w3mmd_vars)
+      .preload(:w3mmd_vars)
       .order(id: :desc)
 
     if params[:category].present?

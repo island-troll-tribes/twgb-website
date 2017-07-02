@@ -1,23 +1,24 @@
-h2 Player Stats: #{@name}
+.panel.panel-default
+  .panel-heading
+    h2.panel-title= @name
 
-table style="width:100%; text-align:left"
-  thead
-    tr
-      th Category
-      th Rank
-      th ELO
-      th Wins
-      th Losses
-      th Percent
-      th Server
+  = render 'standings/score_board', collection: @scores
 
-  tbody
-    - @records.each do |record|
-      tr
-        td= link_to record.category, standing_path(record.category)
-        td= record.rank
-        td= record.score
-        td= record.wins
-        td= record.losses
-        td= '%.2f' % record.percent
-        td= record.server
+  .panel-body
+    p
+      strong Filter
+      form.form-inline method="GET"
+        .form-group
+          label for="category" Category
+          '
+          = category_selector @category
+        '
+        button.btn.btn-default.btn-sm type="submit" Filter
+
+    p
+      strong Class Selection
+      = pie_chart @classes
+
+  = render 'games/list', games: @games
+
+= paginate @games, theme: 'twitter-bootstrap-3'

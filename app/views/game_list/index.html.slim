@@ -1,0 +1,30 @@
+.panel.panel-default
+  .panel-heading
+    h2.panel-title Games
+
+  - if @games.empty?
+    .panel-body
+      p Looks like there aren't any games available right now, check back later!
+  - else
+    table.table.table-striped
+      thead
+        tr
+          th Name
+          th Slots
+          th Map
+          th Players
+          th Started
+        - @games.each do |game|
+          tr
+            td= game.gamename
+            td #{game.slotstaken}/#{game.slotstotal}
+            td= game.map.split(/\\/).last
+            td
+              - game.usernames.split(/\t/).in_groups_of(3).each do |(name)|
+                = link_to name, player_path(name.downcase)
+                '
+            td
+              - if game.totalgames == 1
+                | yes
+              - else
+                | no

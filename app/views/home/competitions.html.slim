@@ -1,0 +1,29 @@
+.panel.panel-default
+  .panel-heading
+    h2.panel-title Competitions
+
+  .panel-body
+    h3= link_to '2017 Team League Standings', standing_path('2017_league')
+
+    h4 Rules
+    ul
+      li No smurfing
+      li No spawn camping
+      li No drake in the arena
+      li Acceptable formats: 2v2, 3v3, 4v4, 5v5, 6v6
+      li Other modes which are agreed upon by a majority of both parties permitted
+
+    h3= link_to '2017 1v1 League Standings', standing_path('2017_1v1_league')
+
+    h4 Rules
+    ul
+      li No smurfing
+      li Forced duel @ 30 minutes
+      li No spawn camping
+      li No drake in the arena
+
+    h2 Past Major Tournaments & Leagues
+    ul
+      li= link_to '2016 1v1 League Standings', standing_path('2016_1v1_league')
+      li= link_to '2016 Summer 2v2 Tournament', 'http://twgb.challonge.com/twgb2v2aug20'
+      li= link_to '2016 Summer 3v3 Tournament', 'http://twgb.challonge.com/twgb3v3aug6'

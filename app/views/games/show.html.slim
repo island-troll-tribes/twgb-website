@@ -1,57 +1,56 @@
-p#notice= notice
+.panel.panel-default
+  .panel-heading
+    h2.panel-title Game #{@game.id}
 
-table
-  tbody
-    tr
-      td: strong ID
-      td= @game.id
-    tr
-      td: strong Date
-      td= @game.datetime
-    tr
-      td: strong Name
-      td= @game.gamename
-    tr
-      td: strong Duration
-      td= distance_of_time_in_words @game.duration
-    tr
-      td: strong Map
-      td= @game.map.split('\\').last
-    tr
-      td: strong Creator
-      td= @game.creatorname
-    tr
-      td: strong Owner
-      td= @game.ownername
-    tr
-      td: strong Category
-      td
-        - if @players.first.present?
-          = link_to @players.first.category, standing_path(@players.first.category)
-    tr
-      td: strong Replay
-      td= link_to "Download", replay_of_game_path(@game.id), target: :_blank
-
-- if @players.any?
-  table style="width:100%; text-align:left"
-    thead
-      tr
-        th Color
-        th Player
-        th Result
-        th ELO Change
-        th Class
-
+  table.table
     tbody
-      - @players.each do |player|
+      tr
+        td: strong Date
+        td= @game.datetime.to_s :db
+      tr
+        td: strong Name
+        td= @game.gamename
+      tr
+        td: strong Duration
+        td= @game.duration.pretty_duration
+      tr
+        td: strong Map
+        td= @game.map.split('\\').last
+      tr
+        td: strong Creator
+        td= @game.creatorname
+      tr
+        td: strong Owner
+        td= @game.ownername
+      tr
+        td: strong Category
+        td
+          - if @players.first.present?
+            = link_to @players.first.category, standing_path(@players.first.category)
+      tr
+        td: strong Replay
+        td= link_to "Download", replay_of_game_path(@game.id), target: :_blank
+
+  .panel-body
+
+  - if @players.any?
+    table.table.table-striped
+      thead
         tr
-          td.number= player.pid
-          td= link_to player.name, player_category_path(player.category, player.name)
-          td= player.flag
-          td.number
-            - if player.elochange
-              = "%+.2f" % player.elochange
-          td
-            = player.troll_class
-            - if player.random_class
-              | (random)
+          th ID
+          th Player
+          th Result
+          th ELO Change
+
+      tbody
+        - @players.each do |player|
+          tr
+            td.number= player.pid
+            td
+              = player_troll_icon player
+              '
+              = link_to player.name, player_path(player.name, player.category)
+            td= player.flag
+            td.number
+              - if player.elochange
+                = "%+.2f" % player.elochange

@@ -35,6 +35,10 @@ gem 'slim-rails', '~> 3.1'
 gem 'redcarpet', '~> 3.4'
 gem 'net-scp', '~> 1.2'
 gem 'kaminari', '~> 1.0'
+gem 'bootstrap-kaminari-views'
+gem 'bootswatch-rails'
+gem 'bootstrap-sass'
+gem 'chartkick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,0 +1,34 @@
+table.table.table-striped
+  thead
+    tr
+      th Game ID
+      th Date
+      th Duration
+      th Winners
+      th Losers
+      th ELO
+      th Category
+      th Map
+
+  tbody
+    - games.each do |game|
+      - category = game.w3mmd_players.first.try(:category)
+      tr
+        td= link_to game.id, game_path(game)
+        td= game.datetime.to_s :db
+        td= game.duration.pretty_duration
+        - [game.winners, game.losers].each do |players|
+          td
+            - if players.any?
+              - players.each do |p|
+                = player_troll_icon p
+                '
+                = link_to p.name, player_path(p.name)
+                br
+            - else
+              = question_icon
+        td= game.elo_change
+        td
+          - if category
+            = link_to category, standing_path(category)
+        td= game.map.split('\\').last

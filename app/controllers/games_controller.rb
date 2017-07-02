@@ -2,21 +2,21 @@ class GamesController < ApplicationController
   before_action :set_game, only: [:show]
 
   def index
+    @category = params[:category]
+
     @games = Game
       .includes(:w3mmd_players)
       .preload(:w3mmd_vars)
       .order(id: :desc)
-
-    if params[:category].present?
-      @games = @games.where(w3mmdplayers: { category: params[:category] })
-    end
+      .page(params[:page])
+    @games = @games.where(w3mmdplayers: { category: params[:category] }) if @category.present?
 
     if params[:name].present?
-      @games = @games.where(w3mmdplayers: { name: params[:name] })
+      params[:name]
+        .split(%r{[,\s]+})
+        .map { |name| W3mmdPlayer.select(:gameid).where(name: name) }
+        .each { |q| @games = @games.where(id: q) }
     end
-
-    @games = @games.page(params[:page])
-    @categories = [''] + W3mmdPlayer.select(:category).distinct.pluck(:category)
   end
 
   def show

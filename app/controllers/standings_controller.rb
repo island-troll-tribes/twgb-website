@@ -1,10 +1,14 @@
 class StandingsController < ApplicationController
-	def index
-    @categories = W3mmdPlayer.select(:category).distinct.pluck(:category)
-	end
+  def index
+    @categories = W3mmdEloScores.categories
+  end
 
   def show
     @category = params[:name].downcase
-    @w3mmd_elo_scores = W3mmdEloScore.where(category: @category).order(score: :desc)
+    @page = [params[:page].to_i, 1].max
+    @scores = W3mmdEloScore
+      .where(category: @category)
+      .order(score: :desc)
+      .page(@page)
   end
 end

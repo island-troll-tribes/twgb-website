@@ -1,3 +1,10 @@
-h2= @category.split('_').map(&:titleize).join(' ') + " Standings"
+.panel.panel-default
+  .panel-heading
+    h2.panel-title= @category.split('_').map(&:titleize).join(' ') + " Standings"
 
-= render "standings"
+  .panel-body
+    = link_to 'View Matches', games_path(category: @category)
+
+  = render 'standings', scores: @scores, page: @page
+
+= paginate @scores, theme: 'twitter-bootstrap-3'

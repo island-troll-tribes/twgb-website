@@ -1,0 +1,70 @@
+//Import bootstrap-sprockets
+@import "bootstrap-sprockets";
+
+// Import cerulean variables
+@import "bootswatch/lumen/variables";
+
+// Then bootstrap itself
+@import "bootstrap";
+
+// And finally bootswatch style itself
+@import "bootswatch/lumen/bootswatch";
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  position: relative;
+  min-height: 100%;
+}
+
+.content {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.number {
+  text-align: right;
+}
+
+.full-width {
+  width: 100%;
+}
+
+ul {
+  margin: 10px;
+}
+
+img {
+  width: 32px;
+  vertical-align: text-top;
+}
+
+footer {
+  margin-top: 1em;
+  background-color: $panel-default-heading-bg;
+  padding: 2em 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: $gray-light;
+
+  .site-footer-links {
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+      margin-left: 1em;
+
+      a {
+        color: $gray;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+table.table.table-striped
+  thead
+    tr
+      th Category
+      th Name
+      th Rank
+      th Record
+      th Percent
+      th ELO
+  tbody
+    - collection.each do |score|
+      tr
+        td= link_to score.category, standing_path(score.category)
+        td= link_to player_path(score.name) do
+          | #{score.name}@#{score.server}
+        td= score.rank
+        td #{score.wins} - #{score.losses}
+        td= '%.2f' % score.percent
+        td= '%.2f' % score.score

@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    title Clan TwGB
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'https://www.gstatic.com/charts/loader.js'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    .page
+      nav.navbar.navbar-inverse.navbar-fixed-top
+        .container
+          .navbar-header
+            = link_to 'TwGB', root_path, class: 'navbar-brand'
+          ul.nav.navbar-nav
+            = active_nav 'Matches', games_path
+            = active_nav 'Games', game_list_path
+            = active_nav 'Competitions', competitions_path
+            = active_nav 'Changelog', changelog_path
+          form.navbar-form.navbar-right action=players_path method="GET"
+            .form-group
+              input.form-control  type="text" name="name" placeholder="Username"
+            '
+            button.btn.btn-default type="submit" Stats
+
+      .container.content
+        = yield
+
+      footer
+        .container
+          ul.site-footer-links
+            li © #{Time.current.year} Jesse Rogers
+            li= github_link
+            li= discord_link
+            li= forums_link
+            li= suggestions_link
+            li= wiki_link

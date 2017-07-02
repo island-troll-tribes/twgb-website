@@ -1,53 +1,21 @@
-h2 Lastest Games
+.panel.panel-default
+  .panel-heading
+    h2.panel-title Recent Games
 
-form method="GET"
-  table border=0
-    tbody
-      tr
-        td: label style="display: inline-block" for="category" Category:
-        td: select name="category"
-          - @categories.each do |category|
-            option value=category selected=(category == params[:category]) =category
-      tr
-        td: label style="display: inline-block" for="name" Username:
-        td: input type="text" name="name" value=params[:name]
-      tr
-        td
-        td: button type="submit" Filter
+  .panel-body
+    form.form-inline method="GET"
+      .form-group
+        label for="name" Username(s)
+        '
+        input.form-control.input-sm type="text" name="name" value=params[:name]
+      '
+      .form-group
+        label for="category" Category
+        '
+        = category_selector @category
+      '
+      button.btn.btn-default.btn-sm type="submit" Filter
 
-table style="width: 100%"
-  thead
-    tr
-      th ID
-      th Date
-      th Duration
-      th Winners
-      th Losers
-      th ELO
-      th Category
-      th Map
+  = render 'games/list', games: @games
 
-  tbody
-    - @games.each do |game|
-      - category = game.w3mmd_players.first.try(:category)
-      tr
-        td= link_to game.id, game_path(game)
-        td= game.datetime.to_formatted_s :short
-        td= distance_of_time_in_words game.duration
-        td
-          - game.winners.each do |p|
-            = link_to p.name, player_category_path(p.name, category)
-            |  (#{p.troll_class})
-            br
-        td
-          - game.losers.each do |p|
-            = link_to p.name, player_category_path(p.name, category)
-            |  (#{p.troll_class})
-            br
-        td= game.elo_change
-        td
-          - if category
-            = link_to category, standing_path(category)
-        td= game.map.split('\\').last
-
-= paginate @games
+= paginate @games, theme: 'twitter-bootstrap-3'

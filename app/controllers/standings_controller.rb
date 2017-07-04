@@ -7,6 +7,7 @@ class StandingsController < ApplicationController
     @category = params[:name].downcase
     @page = [params[:page].to_i, 1].max
     @scores = W3mmdEloScore
+      .ranked
       .where(category: @category)
       .order(score: :desc)
       .page(@page)

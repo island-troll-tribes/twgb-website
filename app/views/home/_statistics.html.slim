@@ -1,16 +1,11 @@
 .panel.panel-default
   .panel-heading
-    h2.panel-title Recent Games
+    h2.panel-title= title or 'Statistics'
 
   .panel-body
     p
       strong Filter
       form.form-inline method="GET"
-        .form-group
-          = label_tag :name, 'Username(s)'
-          '
-          = text_field_tag :name, params[:name], class: 'form-control input-sm', placeholder: 'sue, jim'
-        '
         .form-group
           = label_tag :category, 'Category'
           '
@@ -28,6 +23,16 @@
         '
         button.btn.btn-default.btn-sm type="submit" Filter
 
-  = render 'games/list', games: @games
+    p
+      strong Activity
+      = area_chart @activity, xtitle: 'Day', ytitle: 'Games'
 
-= paginate @games, theme: 'twitter-bootstrap-3'
+    p
+      strong Class Selection
+      = pie_chart @classes
+
+    p
+      strong Class Win Rate
+      = column_chart @class_win_rates, xtitle: 'Class', ytitle: 'Percentage'
+
+  .panel-body

@@ -1,4 +1,4 @@
-.panel.panel-default
+form.form-inline.panel.panel-default method="GET"
   .panel-heading
     h2.panel-title= @name
 
@@ -7,17 +7,47 @@
   .panel-body
     p
       strong Filter
-      form.form-inline method="GET"
-        .form-group
-          label for="category" Category
-          '
-          = category_selector @category
+      .form-group
+        = label_tag :category, 'Category'
         '
-        button.btn.btn-default.btn-sm type="submit" Filter
+        = category_selector @category
+      '
+      .form-group
+        = label_tag :allies, 'Allies'
+        '
+        = text_field_tag :allies, @allies_text, class: 'form-control input-sm', placeholder: 'may, joe, ...'
+      '
+      .form-group
+        = label_tag :enemies, 'Enemies'
+        = text_field_tag :enemies, @enemies_text, class: 'form-control input-sm', placeholder: 'bob, sue, ...'
+      '
+      .form-group
+        = label_tag :start_range, 'From'
+        '
+        = text_field_tag :start_range, @start_range.strftime('%m/%d/%Y'), class: 'form-control input-sm', 'data-provide': 'datepicker', placeholder: 'from'
+      '
+      .form-group
+        = label_tag :end_range, 'Till'
+        '
+        = text_field_tag :end_range, @end_range.strftime('%m/%d/%Y'), class: 'form-control input-sm', 'data-provide': 'datepicker', placeholder: 'till'
+      '
+      button.btn.btn-default.btn-sm type="submit" Filter
+
+    p
+      strong Win Percentage
+      = pie_chart @win_rate
 
     p
       strong Class Selection
       = pie_chart @classes
+
+    p
+      strong Class Win Percentage
+      = column_chart @class_win_rates, xtitle: 'Class', ytitle: 'Percentage'
+
+    p
+      strong Activity
+      = area_chart @activity, xtitle: 'Day', ytitle: 'Games'
 
   = render 'games/list', games: @games
 

@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require chartkick
+//= require bootstrap
+//= require bootstrap-datepicker/core
 //= require_tree .

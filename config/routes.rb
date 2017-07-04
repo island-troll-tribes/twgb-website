@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :standings, only: [:show, :index], param: :name
 
   get '/games_list', to: 'game_list#index', as: 'game_list'
+  get '/meta', to: 'home#meta', as: 'meta'
   get '/changelog', to: 'home#changelog', as: 'changelog'
   get '/competitions', to: 'home#competitions', as: 'competitions'
 end

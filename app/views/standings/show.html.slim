@@ -3,7 +3,12 @@
     h2.panel-title= @category.split('_').map(&:titleize).join(' ') + " Standings"
 
   .panel-body
-    = link_to 'View Matches', games_path(category: @category)
+    p
+      ' You must play at least
+      strong= pluralize W3mmdEloScore::RANKED_GAMES_THRESHOLD, 'game'
+      '  to get ranked!
+    p
+      = link_to 'View Matches', games_path(category: @category)
 
   = render 'standings', scores: @scores, page: @page
 

@@ -39,6 +39,10 @@ gem 'bootstrap-kaminari-views'
 gem 'bootswatch-rails'
 gem 'bootstrap-sass'
 gem 'chartkick'
+gem 'rack-canonical-host'
+gem 'dateslices'
+gem 'pry'
+gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

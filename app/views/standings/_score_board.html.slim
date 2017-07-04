@@ -9,11 +9,12 @@ table.table.table-striped
       th ELO
   tbody
     - collection.each do |score|
+      - rank = score.rank
       tr
         td= link_to score.category, standing_path(score.category)
         td= link_to player_path(score.name) do
           | #{score.name}@#{score.server}
-        td= score.rank
+        td= if rank.zero? then '-' else rank
         td #{score.wins} - #{score.losses}
         td= '%.2f' % score.percent
         td= '%.2f' % score.score

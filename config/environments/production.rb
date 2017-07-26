@@ -83,10 +83,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  # TwGB[Host]
-  config.twgb_host_hostname = ENV['TWGB_HOST_HOSTNAME']
-  config.twgb_host_username = ENV['TWGB_HOST_USERNAME']
-  config.twgb_host_pathname = ENV['TWGB_HOST_PATHNAME']
-  config.twgb_host_ssh_key = ENV['TWGB_HOST_SSH_KEY']
 end

@@ -71,3 +71,14 @@ footer {
     }
   }
 }
+
+.discord-widget {
+  @extend .panel;
+  border-radius: 6px;
+  width: 100%;
+  height: 470px;
+}
+
+.input-xs {
+  max-width: 100px;
+}

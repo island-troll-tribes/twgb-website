@@ -5,10 +5,9 @@ class PlayersController < ApplicationController
     @allies = username_list(@allies_text)
     @enemies_text = params[:enemies]
     @enemies = username_list(@enemies_text)
-    @category = params[:category]
-    @period = params[:period] || :week
-    @start_range = params[:start_range] ? Date.strptime(params[:start_range], '%m/%d/%Y') : Date.new(2016, 10, 1)
-    @end_range = params[:end_range] ? Date.strptime(params[:end_range], '%m/%d/%Y') : Date.tomorrow
+    @team_format = params[:team_format]
+
+    get_category_and_date_range
 
     @scores = W3mmdEloScore.where(name: @name).order(:category)
 
@@ -34,6 +33,19 @@ class PlayersController < ApplicationController
           ])
           .where("`#{enemy}-enemy`.`name` = ?", enemy)
       end
+    end
+
+    if @team_format.present?
+      team_format_query = W3mmdPlayer
+        .select(:gameid)
+        .group(:gameid)
+        .having('SUM(CASE WHEN flag = "winner" THEN 1 ELSE 0 END) = ?', @team_format)
+        .having('SUM(CASE WHEN flag = "loser" THEN 1 ELSE 0 END) = ?', @team_format)
+      subquery = subquery
+        .joins(%Q[
+          INNER JOIN (#{team_format_query.to_sql}) AS `format`
+          ON `format`.`gameid` = `w3mmdplayers`.`gameid`
+        ])
     end
 
     @games = Game
@@ -92,11 +104,64 @@ class PlayersController < ApplicationController
     .reduce({ 'winner' => 0, 'loser' => 0, 'drawer' => 0 }) do |memo, obj|
       memo.merge({ obj.flag =>  memo[obj.flag] + obj.count })
     end
+
+    if @category.present?
+      @elo_change_over_time = get_elo_change_over_time([@name])[@name]
+      @min_elo = @elo_change_over_time.min
+      @max_elo = @elo_change_over_time.max
+    end
   end
 
   def index
     @name = params[:name]
     return redirect_to player_path(@name) if @name
 	  @placeholder = W3mmdPlayer.select(:name).order('RAND()').pluck(:name).first
+  end
+
+  def compare
+    get_category_and_date_range
+    @names = username_list(params[:names])
+
+    elo_changes = get_elo_change_over_time(@names)
+    @elo_changes = elo_changes.map{ |k, v| { name: k, data: v } }
+    @min_elo = @elo_changes.min_by{ |e| e[:data].min }
+    @max_elo = @elo_changes.max_by{ |e| e[:data].max }
+  end
+
+  def get_elo_change_over_time(names)
+    game_elo = W3mmdPlayer
+      .select(:name, :datetime, :elochange)
+      .joins(:game)
+      .where('datetime > ?', @start_range)
+      .where('datetime <= ?', @end_range)
+      .where.not(elochange: nil)
+      .where(name: names)
+      .where('category = ?', @category)
+      .order(gameid: 'ASC')
+
+    starting_elos = W3mmdPlayer
+      .select(:name, 'SUM(elochange) AS starting_elo')
+      .joins(:game)
+      .where('datetime < ?', @start_range)
+      .where.not(elochange: nil)
+      .where(name: names)
+      .group(:name)
+      .where('category = ?', @category)
+
+    starting_elo = starting_elos.reduce({}) do |memo, player|
+      memo.merge(player.name => player[:starting_elo])
+    end
+
+    names.reduce({}) do |players, name|
+      prev_elo = 1000 + (starting_elo[name] or 0)
+      base = { @start_range => prev_elo }
+      elo_change_over_time = game_elo
+      .each_with_object(base) do |game, memo|
+        prev_elo += game[:elochange] if game.name == name
+        memo[game[:datetime].localtime] = prev_elo
+      end
+      elo_change_over_time.merge!({ @end_range => prev_elo })
+      players.merge(name => elo_change_over_time)
+    end
   end
 end

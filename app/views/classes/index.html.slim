@@ -1,0 +1,60 @@
+.panel.panel-default
+  .panel-heading
+    h2.panel-title Top Class Players
+
+  .panel-body
+    p
+      strong Filter
+      form.form-inline method="GET"
+        .form-group
+          = label_tag :category, 'Category'
+          '
+          = category_selector @category
+        '
+        .form-group
+          = label_tag :start_range, 'From'
+          '
+          = text_field_tag :start_range, @start_range.strftime('%m/%d/%Y'), class: 'form-control input-sm input-xs', 'data-provide': 'datepicker', placeholder: 'from'
+        '
+        .form-group
+          = label_tag :end_range, 'Till'
+          '
+          = text_field_tag :end_range, @end_range.strftime('%m/%d/%Y'), class: 'form-control input-sm input-xs', 'data-provide': 'datepicker', placeholder: 'till'
+        '
+        .form-group
+          = label_tag :minimum_games, 'Minimum Number of Games'
+          '
+          = text_field_tag :minimum_games, @min_games, class: 'form-control input-sm input-xs', placeholder: W3mmdEloScore::RANKED_GAMES_THRESHOLD
+        '
+        .form-group
+          = label_tag :name, 'Name'
+          '
+          = text_field_tag :name, @name, class: 'form-control input-sm input-xs', placeholder: 'sue'
+        '
+        button.btn.btn-default.btn-sm type="submit" Filter
+
+    p
+      ' You must play at least
+      strong= pluralize W3mmdEloScore::RANKED_GAMES_THRESHOLD, 'game'
+      '  with a class to get ranked!
+
+  table.table.table-striped
+    thead
+      tr
+        th Class
+        th Name
+        th Record
+        th Percent
+        th Elo Gain
+        th Score
+    tbody
+      - @top_ranking_player_by_class.each do |player|
+        tr
+          td
+            = link_to class_path(parse_troll_class(player["class"])) do
+               = troll_icon(parse_troll_class(player["class"]))
+          td= link_to player["name"], player_path(player["name"])
+          td #{player["wins"]}-#{player["losses"]}
+          td= '%.2f' % player["percent"]
+          td= '%.2f' % player["elo"]
+          td= '%.2f' % player["score"]

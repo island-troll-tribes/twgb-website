@@ -1,6 +1,23 @@
 # Island Troll Tribes Change Log
 
 
+## v2.99f
+
+ - Fixed random spawn (again)
+ - Fixed some modes which wouldn't activate
+ - Fixed horn abilities
+
+## v2.99e
+
+ - Fixed spears not being blocked by shields
+ - Fixed random spawn (-rs)
+ - You can't random a class someone has picked without (-or) mode
+ - There are only four repicks per tribe
+ - You can now pick a hero someone else repicked
+ - Anabolic boots now have 10% evasion instead of blink
+ - Snare kits only stack to one
+ - Fixed starting with a skill point when subbed
+
 ## v2.99d
 
  - Disease potion no longer stacks
@@ -12,6 +29,7 @@
  - No horn removed from standard 1v1 modes
  - When all players on a tribe leave kill all their trolls (hopefully fixed)
  - 6v6 hcl fixed (e)
+ - Reduced lag when a player subs
 
 ## v2.99c
 

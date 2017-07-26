@@ -4,36 +4,37 @@ class W3mmdPlayer < ApplicationRecord
   belongs_to :game, foreign_key: :gameid, inverse_of: :w3mmd_players
 
   def troll_class
-    var = get_w3mmd_var('class', :value_string)
-    if var.present?
-      var[1...-1].split('_').drop(1).map(&:titleize).join(' ')
-    end
+    get_w3mmd_var('class').try(:as_troll_class)
   end
 
   def random_class
-    !!get_w3mmd_var('random', :value_int)
+    !!get_w3mmd_var_field('random', :value_int)
   end
 
   def kills
-    get_w3mmd_var('kills', :value_int)
+    get_w3mmd_var_field('kills', :value_int)
   end
 
   def deaths
-    get_w3mmd_var('deaths', :value_int)
+    get_w3mmd_var_field('deaths', :value_int)
   end
 
   def gold
-    get_w3mmd_var('gold', :value_int)
+    get_w3mmd_var_field('gold', :value_int)
   end
 
-  def get_w3mmd_var(name, field)
+  def get_w3mmd_var(name)
     game.w3mmd_vars.inject nil do |memo, var|
       if var.pid == pid and var.varname == name
-        var[field]
+        var
       else
         memo
       end
     end
+  end
+
+  def get_w3mmd_var_field(name, field)
+    get_w3mmd_var(name).try(field)
   end
 
   def opponents

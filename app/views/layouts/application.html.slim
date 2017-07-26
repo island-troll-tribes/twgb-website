@@ -17,6 +17,7 @@ html
             = active_nav 'Matches', games_path
             = active_nav 'Games', game_list_path
             = active_nav 'Meta', meta_path
+            = active_nav 'Classes', classes_path
             = active_nav 'Competitions', competitions_path
             = active_nav 'Changelog', changelog_path
           form.navbar-form.navbar-right action=players_path method="GET"
@@ -32,8 +33,11 @@ html
         .container
           ul.site-footer-links
             li © #{Time.current.year} Jesse Rogers
-            li= github_link
             li= discord_link
+            li= facebook_link
+            li= twitter_link
+            li= github_link
             li= forums_link
             li= suggestions_link
             li= wiki_link
+            li= hiveworkshop_link

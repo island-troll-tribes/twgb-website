@@ -9,7 +9,7 @@ class W3mmdEloScore < ApplicationRecord
   end
 
   def rank
-    return 0 if wins + losses <= RANKED_GAMES_THRESHOLD
+    return 0 if wins + losses < RANKED_GAMES_THRESHOLD
 
     self.class
       .ranked

@@ -24,8 +24,16 @@
         button.btn.btn-default.btn-sm type="submit" Filter
 
     p
-      strong Activity
-      = area_chart @activity, xtitle: 'Day', ytitle: 'Games'
+      .container: .row
+        .col-8: strong Activity
+        .col-2: small: em  Drag to zoom in, right-click to zoom out
+      = area_chart @activity, xtitle: 'Day', ytitle: 'Games', library: { explorer: { axis: :horizontal, keepInBounds: true, actions: [:dragToZoom, :rightClickToReset], maxZoomIn: 0.01 } }
+
+    p
+      .container: .row
+        .col-8: strong Active Players
+        .col-2: small: em  Drag to zoom in, right-click to zoom out
+      = area_chart @players, xtitle: 'Month', ytitle: 'Players', library: { explorer: { axis: :horizontal, keepInBounds: true, actions: [:dragToZoom, :rightClickToReset], maxZoomIn: 0.01 } }
 
     p
       strong Class Selection

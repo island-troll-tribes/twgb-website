@@ -13,23 +13,29 @@ form.form-inline.panel.panel-default method="GET"
         = category_selector @category
       '
       .form-group
+        = label_tag :team_format, 'Format'
+        '
+        = team_format_selector @team_format
+      '
+      .form-group
         = label_tag :allies, 'Allies'
         '
-        = text_field_tag :allies, @allies_text, class: 'form-control input-sm', placeholder: 'may, joe, ...'
+        = text_field_tag :allies, @allies_text, class: 'form-control input-sm input-xs', placeholder: 'may, joe, ...'
       '
       .form-group
         = label_tag :enemies, 'Enemies'
-        = text_field_tag :enemies, @enemies_text, class: 'form-control input-sm', placeholder: 'bob, sue, ...'
+        '
+        = text_field_tag :enemies, @enemies_text, class: 'form-control input-sm input-xs', placeholder: 'bob, sue, ...'
       '
       .form-group
         = label_tag :start_range, 'From'
         '
-        = text_field_tag :start_range, @start_range.strftime('%m/%d/%Y'), class: 'form-control input-sm', 'data-provide': 'datepicker', placeholder: 'from'
+        = text_field_tag :start_range, @start_range.strftime('%m/%d/%Y'), class: 'form-control input-sm input-xs', 'data-provide': 'datepicker', placeholder: 'from'
       '
       .form-group
         = label_tag :end_range, 'Till'
         '
-        = text_field_tag :end_range, @end_range.strftime('%m/%d/%Y'), class: 'form-control input-sm', 'data-provide': 'datepicker', placeholder: 'till'
+        = text_field_tag :end_range, @end_range.strftime('%m/%d/%Y'), class: 'form-control input-sm input-xs', 'data-provide': 'datepicker', placeholder: 'till'
       '
       button.btn.btn-default.btn-sm type="submit" Filter
 
@@ -46,8 +52,19 @@ form.form-inline.panel.panel-default method="GET"
       = column_chart @class_win_rates, xtitle: 'Class', ytitle: 'Percentage'
 
     p
-      strong Activity
-      = area_chart @activity, xtitle: 'Day', ytitle: 'Games'
+      .container: .row
+        .col-8: strong Activity
+        .col-2: small: em  Drag to zoom in, right-click to zoom out
+        = area_chart @activity, xtitle: 'Day', ytitle: 'Games', library: { explorer: { axis: :horizontal, keepInBounds: true, actions: [:dragToZoom, :rightClickToReset], maxZoomIn: 0.01 } }
+
+    p
+      .container: .row
+        .col-8: strong Elo Change
+        - if @elo_change_over_time
+          .col-2: small: em  Drag to zoom in, right-click to zoom out
+          = line_chart @elo_change_over_time, xtitle: 'Time', ytitle: 'Elo', min: @min_elo, max: @max_elo, library: { explorer: { axis: :horizontal, keepInBounds: true, actions: [:dragToZoom, :rightClickToReset], maxZoomIn: 0.01 } }
+        - else
+          .col-2: small: em Select a category to view elo change over time
 
   = render 'games/list', games: @games
 

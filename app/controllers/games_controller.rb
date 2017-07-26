@@ -2,9 +2,7 @@ class GamesController < ApplicationController
   before_action :set_game, only: [:show]
 
   def index
-    @category = params[:category]
-    @start_range = params[:start_range] ? Date.strptime(params[:start_range], '%m/%d/%Y') : Date.new(2016, 10, 1)
-    @end_range = params[:end_range] ? Date.strptime(params[:end_range], '%m/%d/%Y') : Date.tomorrow
+    get_category_and_date_range
     @names = username_list(params[:name])
 
     @games = Game

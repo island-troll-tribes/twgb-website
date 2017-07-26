@@ -51,10 +51,4 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-
-  # TwGB[Host]
-  config.twgb_host_hostname = ENV['TWGB_HOST_HOSTNAME']
-  config.twgb_host_username = ENV['TWGB_HOST_USERNAME']
-  config.twgb_host_pathname = ENV['TWGB_HOST_PATHNAME']
-  config.twgb_host_ssh_key = ENV['TWGB_HOST_SSH_KEY']
 end

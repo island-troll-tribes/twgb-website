@@ -15,7 +15,7 @@ table.table.table-striped
       - category = game.w3mmd_players.first.try(:category)
       tr
         td= link_to game.id, game_path(game)
-        td= game.datetime.to_s :db
+        td= game.datetime.localtime.to_s :db
         td= game.duration.pretty_duration
         - [game.winners, game.losers].each do |players|
           td

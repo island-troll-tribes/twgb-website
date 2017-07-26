@@ -1,4 +1,6 @@
 module GamesHelper
+  include ParseTrollClass
+
   def player_troll_icon(player)
     return question_icon unless player.troll_class.present?
     troll_icon player.troll_class, title: player.name

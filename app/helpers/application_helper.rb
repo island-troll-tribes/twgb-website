@@ -15,6 +15,16 @@ module ApplicationHelper
     select_tag opts[:name], options.html_safe, opts
   end
 
+  def team_format_selector(current, opts={})
+    opts = { name: 'team_format', class: 'form-control input-sm' }.merge(opts)
+    options = (1..6).collect do |x|
+      content_tag :option, "#{x}v#{x}", value: x, selected: x.to_s == current
+    end
+      .unshift(content_tag(:option, '', value: '', selected: current.blank?))
+      .join('')
+    select_tag opts[:name], options.html_safe, opts
+  end
+
   def wc3_link(text='Warcraft III', opts={ target: '_BLANK' })
     link_to text, 'http://us.blizzard.com/en-us/games/war3/', opts
   end
@@ -36,6 +46,18 @@ module ApplicationHelper
   end
 
   def github_link(text='GitHub', opts={ target: '_BLANK' })
-    link_to text, 'https://github.com/island-troll-tribes/island-troll-tribes', opts
+    link_to text, 'https://github.com/island-troll-tribes', opts
+  end
+
+  def facebook_link(text='Facebook', opts={ target: '_BLANK' })
+    link_to text, 'https://www.facebook.com/island.troll.tribes.wc3/', opts
+  end
+
+  def twitter_link(text='Twitter', opts={ target: '_BLANK' })
+    link_to text, 'https://twitter.com/island_trolls', opts
+  end
+
+  def hiveworkshop_link(text='HiveWorkshop', opts={ target: '_BLANK' })
+    link_to text, 'https://www.hiveworkshop.com/threads/island-troll-tribes-v2-99f.297609/', opts
   end
 end

@@ -35,7 +35,33 @@ class HomeController < ApplicationController
   end
 
   def meta
-    get_statistics
+    get_category_and_date_range
+    get_class_win_rates
+    get_activity
+    get_player_activity
+  end
+
+  def player_last_played
+    get_category_and_date_range
+    @min_games = params[:min_games]
+    min_games = if @min_games.present? then @min_games.to_i else 1 end
+    @max_games = params[:max_games]
+    max_games = if @max_games.present? then @max_games.to_i else 9e9 end
+    @twgb_only = params[:twgb_only].present?
+    @players = GamePlayer
+      .joins(:game)
+      .select(
+        :name,
+        'COUNT(*) AS num_games',
+        'MAX(datetime) AS last_played'
+      )
+      .where('datetime >= ?', @start_range)
+      .where('datetime <= ?', @end_range)
+      .group(:name)
+      .having('num_games >= ?', min_games)
+      .having('num_games <= ?', max_games)
+      .order('last_played DESC')
+    @players = @players.where(reserved: 1) if @twgb_only
   end
 
   private
@@ -48,11 +74,7 @@ class HomeController < ApplicationController
       .order(category: :asc)
   end
 
-  def get_statistics
-    @category = params[:category]
-    @start_range = params[:start_range] ? Date.strptime(params[:start_range], '%m/%d/%Y') : Date.new(2016, 10, 1)
-    @end_range = params[:end_range] ? Date.strptime(params[:end_range], '%m/%d/%Y') : Date.tomorrow
-
+  def get_activity
     activity = Game
       .where('datetime >= ?', @start_range)
       .where('datetime <= ?', @end_range)
@@ -63,7 +85,9 @@ class HomeController < ApplicationController
       db_date = date.to_s(:db) + ' 00:00:00 UTC'
       hash[date] = activity.fetch(db_date, 0)
     end
+  end
 
+  def get_class_win_rates
     class_data = W3mmdVar
       .select('value_string', 'flag', 'COUNT(*) AS count')
       .joins(:game)
@@ -86,6 +110,24 @@ class HomeController < ApplicationController
 
     @class_win_rates = class_record.reduce({}) do |memo, (key, val)|
       memo.merge({ key => val['winner'].to_f * 100 / @classes[key] })
+    end
+  end
+
+  def get_player_activity
+    players = W3mmdPlayer
+      .joins(:game)
+      .select(
+        'COUNT(DISTINCT name) AS count',
+        'DATE_FORMAT(datetime, "%Y-%m-01 00:00:00 EST") AS date_slice',
+      )
+      .where('datetime >= ?', @start_range)
+      .where('datetime <= ?', @end_range)
+      .group('date_slice')
+      .order('date_slice')
+    players = players.where(category: @category) if @category.present?
+
+    @players = players.each_with_object({}) do |month, memo|
+      memo[month[:date_slice]] = month[:count]
     end
   end
 end

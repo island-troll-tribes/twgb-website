@@ -1,0 +1,49 @@
+.panel.panel-default
+  .panel-heading
+    h2.panel-title TwGB Player Activity
+
+  .panel-body
+    p
+      strong Filter
+      form.form-inline method="GET"
+        .form-group
+          = label_tag :twgb_only, 'TwGB Only'
+          '
+          = check_box_tag :twgb_only, 1, @twgb_only == 1
+        '
+        .form-group
+          = label_tag :min_games, 'Minimum # of Games'
+          '
+          = text_field_tag :min_games, @min_games, class: 'form-control input-sm', placeholder: '1'
+        '
+        .form-group
+          = label_tag :max_games, 'Maximum # of Games'
+          '
+          = text_field_tag :max_games, @max_games, class: 'form-control input-sm', placeholder: '∞'
+        '
+        .form-group
+          = label_tag :start_range, 'From'
+          '
+          = text_field_tag :start_range, @start_range.strftime('%m/%d/%Y'), class: 'form-control input-sm', 'data-provide': 'datepicker', placeholder: 'from'
+        '
+        .form-group
+          = label_tag :end_range, 'Till'
+          '
+          = text_field_tag :end_range, @end_range.strftime('%m/%d/%Y'), class: 'form-control input-sm', 'data-provide': 'datepicker', placeholder: 'till'
+        '
+        button.btn.btn-default.btn-sm type="submit" Filter
+
+  table.table.table-striped
+    thead
+      tr
+        th #
+        th Name
+        th Number of Games
+        th Last Played
+    tbody
+      - @players.each_with_index do |player, i|
+          tr
+            td= i + 1
+            td= link_to player.name, player_path(player.name)
+            td= player[:num_games]
+            td= player[:last_played]

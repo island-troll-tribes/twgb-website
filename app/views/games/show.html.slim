@@ -49,7 +49,7 @@
             td
               = player_troll_icon player
               '
-              = link_to player.name, player_path(player.name, player.category)
+              = link_to player.name, player_path(player.name)
             td= player.flag
             td.number
               - if player.elochange

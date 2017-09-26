@@ -1,11 +1,11 @@
 class W3mmdEloScore < ApplicationRecord
-  RANKED_GAMES_THRESHOLD = 5
+  RANKED_GAMES_THRESHOLD = 10
 
   default_scope { where.not(category: ['ITT-latest', 'pro']) }
   scope :ranked, -> { where('wins + losses >= ?', RANKED_GAMES_THRESHOLD) }
 
   def percent
-    wins * 100.0 / games
+    wins * 100.0 / (wins + losses)
   end
 
   def rank

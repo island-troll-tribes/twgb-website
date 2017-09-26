@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   resources :standings, only: [:show, :index], param: :name
   resources :classes, only: [:show, :index], param: :class
 
+  resources :maps, only: [], param: :version, constraints: { version: /((?:.(?!\.json$))*(?:$|.))/ } do
+    get :download, on: :member, as: :map_download
+  end
+
   get '/games_list', to: 'game_list#index', as: 'game_list'
   get '/meta', to: 'home#meta', as: 'meta'
   get '/compare', to: 'players#compare', as: 'compare_players'

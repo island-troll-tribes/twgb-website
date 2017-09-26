@@ -26,27 +26,8 @@ class GamesController < ApplicationController
   end
 
   def replay
-    hostname = Rails.application.config.twgb_host_hostname
-    username = Rails.application.config.twgb_host_username
-    pathname = Rails.application.config.twgb_host_pathname
-    ssh_key = Rails.application.config.twgb_host_ssh_key
-
     filename = params[:id] + '.w3g'
-    full_pathname = pathname + filename
-    data = nil
-
-    begin
-      Net::SCP.start hostname, username, key_data: [ssh_key], keys_only: true do |scp|
-        data = scp.download! full_pathname
-      end
-    rescue Net::SCP::Error => e
-      if e.message.include? 'No such file or directory'
-        raise ActionController::RoutingError.new('Replay expired')
-      end
-      raise e
-    end
-
-    send_data data, filename: filename, disposition: :attachment
+    send_file_from_twgb_host 'replays/', filename
   end
 
   private

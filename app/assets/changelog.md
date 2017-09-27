@@ -1,6 +1,13 @@
 # Island Troll Tribes Change Log
 
 
+## [v2.101b](/maps/2.101b/download)
+
+ - Fixed tannery recipe
+ - Fixed 'null' items
+ - Drunk pots stack to 4
+ - Changed one of the items in thief bush
+
 ## [v2.101a](/maps/2.101a/download)
 
  - Tannery recipe is now stick, stick, stone, stone, clay ball

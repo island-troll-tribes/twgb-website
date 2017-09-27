@@ -1,6 +1,24 @@
 # Island Troll Tribes Change Log
 
 
+## [v2.101a](/maps/2.101a/download)
+
+ - Tannery recipe is now stick, stick, stone, stone, clay ball
+ - Drunk potion recipe is now 2x river root, 2x butsu, 1x special
+ - Removed an extra mushroom which was in the water on NW
+ - You can now drop down from thieves bushes (hint: water)
+ - Mushroom no longer spawns in hidden stash
+ - Mushroom rate increased from 50% to 75%
+ - Thistle rate decreased from 100% to 75%
+ - Thief's bush items and rates changed (hint: no more stones, no more mc)
+ - Escape artist ability hotkeys improved (Jump [E], Blur [W], Camoflauge [Q])
+ - Smoke bomb now casts the same spell as smoke stream
+ - Sell prices for elk boots/gloves reduced to 15g, elk coat to 23g
+ - Sell prices for bone boots/gloves reduced to 22g, bone coat to 30g
+ - Sell prices for tent, shield reduced to 8g, bone shield reduced to 13g
+ - Thief can use anabolic boots again
+ - -gold now should accept player names, and you can also use -give or -g
+
 ## [v2.100c](/maps/2.100c/download)
 
  - Elk hides sell for 5g

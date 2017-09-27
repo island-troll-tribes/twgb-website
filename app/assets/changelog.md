@@ -1,6 +1,11 @@
 # Island Troll Tribes Change Log
 
 
+## [v2.101c](/maps/2.101c/download)
+
+ - Changed the in thief bush
+ - Item warp now scales like it should (thanks Xan Kriegor)
+
 ## [v2.101b](/maps/2.101b/download)
 
  - Fixed tannery recipe

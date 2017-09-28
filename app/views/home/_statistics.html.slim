@@ -31,6 +31,12 @@
 
     p
       .container: .row
+        .col-8: strong Game Length
+        .col-2: small: em  Drag to zoom in, right-click to zoom out
+      = area_chart @average_game_length, xtitle: 'Day', ytitle: 'Average Duration (min)', library: { explorer: { axis: :horizontal, keepInBounds: true, actions: [:dragToZoom, :rightClickToReset], maxZoomIn: 0.01 } }
+
+    p
+      .container: .row
         .col-8: strong Active Players
         .col-2: small: em  Drag to zoom in, right-click to zoom out
       = area_chart @players, xtitle: 'Month', ytitle: 'Players', library: { explorer: { axis: :horizontal, keepInBounds: true, actions: [:dragToZoom, :rightClickToReset], maxZoomIn: 0.01 } }

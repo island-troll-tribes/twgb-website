@@ -39,6 +39,7 @@ class HomeController < ApplicationController
     get_class_win_rates
     get_activity
     get_player_activity
+    get_game_length
   end
 
   def player_last_played
@@ -65,6 +66,24 @@ class HomeController < ApplicationController
   end
 
   private
+
+  def get_game_length
+    average = Game.average_game_length do |query|
+      query = query.where('category = ?', @category) if @category.present?
+      query
+        .where('datetime >= ?', @start_range)
+        .where('datetime <= ?', @end_range)
+    end
+    .each_with_object({}) do |month, memo|
+      memo[month[:date_slice]] = month[:average]
+    end
+
+    @average_game_length = (@start_range..@end_range)
+    .each_with_object({}) do |date, hash|
+      db_date = date.to_s(:db) + ' 00:00:00 UTC'
+      hash[date] = average.fetch(db_date, 0)
+    end
+  end
 
   def get_leaders
     subquery = W3mmdEloScore.select(:category, 'MAX(score) as score').group(:category)

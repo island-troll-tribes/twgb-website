@@ -22,4 +22,19 @@ class Game < ApplicationRecord
   def elo_change
     w3mmd_players.first.try(:elochange).try(:abs)
   end
+
+  def self.average_game_length(&blk)
+    query = self
+      .select(
+        'AVG(duration) / 60 AS average',
+        'DATE_FORMAT(datetime, "%Y-%m-%d 00:00:00 UTC") AS date_slice',
+      )
+      .where('duration > ?', 8.minutes.seconds)
+      .group('date_slice')
+      .order('date_slice')
+
+    query = yield query if blk
+
+    return query
+  end
 end

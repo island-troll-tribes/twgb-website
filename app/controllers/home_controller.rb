@@ -69,7 +69,19 @@ class HomeController < ApplicationController
 
   def get_game_length
     average = Game.average_game_length do |query|
-      query = query.where('category = ?', @category) if @category.present?
+      if @category.present?
+        query = query
+          .where(
+            %q{
+            EXISTS (
+              SELECT 1 FROM w3mmdplayers WHERE
+              games.id = gameid AND
+              category = ?
+            )},
+            @category
+          )
+      end
+
       query
         .where('datetime >= ?', @start_range)
         .where('datetime <= ?', @end_range)

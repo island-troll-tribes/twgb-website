@@ -39,7 +39,8 @@ class ApplicationController < ActionController::Base
       raise e
     end
 
-    response.headers['Content-Length'] = data.size.to_s
+    p 'got data'
+
     send_data data, filename: filename, disposition: :attachment
   end
 end

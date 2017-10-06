@@ -1,3 +1,3 @@
 class Admin < ApplicationRecord
-  self.table_name = 'admin'
+  self.table_name = 'admins'
 end

@@ -1,6 +1,19 @@
 # Island Troll Tribes Change Log
 
 
+## [v2.102a](/maps/2.102a/download)
+
+ - Stupefy no longer grants magic immunity
+ - Dysentery track duration from 70s -> 60s and can be cured
+ - You can now use teleport beacon to reach aligator
+ - Teleport beacon recipe changed to Stone, Stone, Mana Crystal, Stick, Tinder
+ - Teleport becaon is now upgraded with Magic, and can only be upgrade once to 1100 range
+ - Teleport beacon now starts at level two (700 range up from 500)
+ - Added a ramp which is treed to the SW of NW spawn
+ - Removed a thief's bush on SW
+ - Fixed thief's bush teleport making units break
+ - Fixed Disco Duck spawn
+
 ## [v2.101c](/maps/2.101c/download)
 
  - Changed the in thief bush

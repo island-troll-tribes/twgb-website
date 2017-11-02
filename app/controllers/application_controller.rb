@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     @start_range = if params[:start_range].present? then
                      Date.strptime(params[:start_range], '%m/%d/%Y')
                    else
-                     Date.today - 3.months
+                     Date.today - 1.year
                    end
     @end_range = if params[:end_range].present? then
                    Date.strptime(params[:end_range], '%m/%d/%Y')

@@ -7,6 +7,13 @@ html
     = javascript_include_tag 'https://www.gstatic.com/charts/loader.js'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag 'icons/priest.png', type: 'image/png'
+    script src="https://www.googletagmanager.com/gtag/js?id=UA-109172392-1" async=1
+    javascript:
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109172392-1');
 
   body
     .page

@@ -1,6 +1,23 @@
 # Island Troll Tribes Change Log
 
 
+## [v2.103a](/maps/2.103a/download)
+
+ - Gem of knowledge experience gain is now equal for all classes, can be used by thief
+ - Medallion of Courage is now classless but can't be used by hunter or beast master and can be consumed immediately
+ - Reduced armor gain of all shields except battle shield, added strength gain and magic resistence instead
+ - Increased Clay Explosion spawn chance (from 7:1 to 4:1)
+ - Nether potions brew in batches of 2, 6 butsu makes 2 cure alls
+ - Anabolic potions recipe cost reduced (4 river stems).
+ - Sage's Increase Metabolism applies to smoked meat as well.
+ - Gatherer MS increased by 15, priest vision increased by 150
+ - Battle axe silence mana cost reduced from 25 -> 0
+ - Scout & gatherer radar pings are now point locations
+ - Panic cd is now equal to its duration
+ - Elemental shield potion recipe changed to 1 special herb, 1 river stem, 1 butsu
+ - Fixed "-all <class>" command
+ - Fixed "-g" command
+
 ## [v2.102a](/maps/2.102a/download)
 
  - Stupefy no longer grants magic immunity

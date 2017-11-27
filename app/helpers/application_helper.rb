@@ -8,7 +8,7 @@ module ApplicationHelper
 
   def category_selector(current, opts={})
     opts = { name: 'category', class: 'form-control input-sm' }.merge(opts)
-    categories = [''] + W3mmdEloScore.categories
+    categories = [''] # + W3mmdEloScore.categories
     options = categories.collect do |category|
       content_tag :option, category, value: category, selected: category == current
     end.join('')

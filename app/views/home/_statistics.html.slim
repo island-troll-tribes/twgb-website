@@ -12,6 +12,11 @@
           = category_selector @category
         '
         .form-group
+          = label_tag :team_format, 'Format'
+          '
+          = team_format_selector @team_format
+        '
+        .form-group
           = label_tag :start_range, 'From'
           '
           = text_field_tag :start_range, @start_range.strftime('%m/%d/%Y'), class: 'form-control input-sm', 'data-provide': 'datepicker', placeholder: 'from'

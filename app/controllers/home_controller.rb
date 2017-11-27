@@ -35,6 +35,7 @@ class HomeController < ApplicationController
   end
 
   def meta
+    @team_format = params[:team_format]
     get_category_and_date_range
     get_class_win_rates
     get_activity
@@ -68,7 +69,16 @@ class HomeController < ApplicationController
   private
 
   def get_game_length
+    if @team_format.present?
+      subquery = W3mmdPlayer
+        .select(:gameid)
+        .group(:gameid)
+        .having('SUM(CASE WHEN flag = "winner" THEN 1 ELSE 0 END) = ?', @team_format)
+        .having('SUM(CASE WHEN flag = "loser" THEN 1 ELSE 0 END) = ?', @team_format)
+    end
+
     average = Game.average_game_length do |query|
+      query = query.where(id: subquery) if subquery
       if @category.present?
         query = query
           .where(
@@ -106,11 +116,21 @@ class HomeController < ApplicationController
   end
 
   def get_activity
+    if @team_format.present?
+      subquery = W3mmdPlayer
+        .select(:gameid)
+        .group(:gameid)
+        .having('SUM(CASE WHEN flag = "winner" THEN 1 ELSE 0 END) = ?', @team_format)
+        .having('SUM(CASE WHEN flag = "loser" THEN 1 ELSE 0 END) = ?', @team_format)
+    end
+
     activity = Game
       .where('datetime >= ?', @start_range)
       .where('datetime <= ?', @end_range)
     activity = activity.where('EXISTS (SELECT 1 FROM w3mmdplayers WHERE games.id = gameid AND category = ?)', @category) if @category.present?
+    activity = activity.where(id: subquery) if subquery
     activity = activity.group_by_day(:datetime)
+
     @activity = (@start_range..@end_range)
     .each_with_object({}) do |date, hash|
       db_date = date.to_s(:db) + ' 00:00:00 UTC'
@@ -119,6 +139,14 @@ class HomeController < ApplicationController
   end
 
   def get_class_win_rates
+    if @team_format.present?
+      subquery = W3mmdPlayer
+        .select(:gameid)
+        .group(:gameid)
+        .having('SUM(CASE WHEN flag = "winner" THEN 1 ELSE 0 END) = ?', @team_format)
+        .having('SUM(CASE WHEN flag = "loser" THEN 1 ELSE 0 END) = ?', @team_format)
+    end
+
     class_data = W3mmdVar
       .select('value_string', 'flag', 'COUNT(*) AS count')
       .joins(:game)
@@ -130,6 +158,7 @@ class HomeController < ApplicationController
       .where.not('flag = ?', '')
       .group('value_string, flag')
     class_data = class_data.where('category = ?', @category) if @category.present?
+    class_data = class_data.where(games: { id: subquery }) if subquery
 
     class_record = class_data.reduce({}) do |memo, obj|
       memo.deep_merge({ obj.as_troll_class => { obj.flag => obj.count } })
@@ -145,7 +174,15 @@ class HomeController < ApplicationController
   end
 
   def get_player_activity
-    players = W3mmdPlayer
+    if @team_format.present?
+      subquery = W3mmdPlayer
+        .select(:gameid)
+        .group(:gameid)
+        .having('SUM(CASE WHEN flag = "winner" THEN 1 ELSE 0 END) = ?', @team_format)
+        .having('SUM(CASE WHEN flag = "loser" THEN 1 ELSE 0 END) = ?', @team_format)
+    end
+
+    players = GamePlayer
       .joins(:game)
       .select(
         'COUNT(DISTINCT name) AS count',
@@ -156,6 +193,7 @@ class HomeController < ApplicationController
       .group('date_slice')
       .order('date_slice')
     players = players.where(category: @category) if @category.present?
+    players = players.where(games: { id: subquery }) if subquery
 
     @players = players.each_with_object({}) do |month, memo|
       memo[month[:date_slice]] = month[:count]

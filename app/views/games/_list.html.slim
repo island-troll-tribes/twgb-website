@@ -29,6 +29,6 @@ table.table.table-striped
               = question_icon
         td= game.elo_change
         td
-          - if category
+          - if category.present?
             = link_to category, standing_path(category)
         td= game.map.split('\\').last

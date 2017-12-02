@@ -15,6 +15,7 @@
  - Bee hive is now made in pot with the recipe Special Herb, River Stem, River Stem, creates 2 charges
  - Removed -op mode and items
  - Chicken now needs the level 5 attack ability to attack buildings, DPS AoE reduced to 200, damage curve reduced from 12->28 to 12->24
+ - Gator stun reduced from 2s->1s, health increased from 800->1500
  - Fix spears
  - Fix medallion
  - Fix fervor

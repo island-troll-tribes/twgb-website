@@ -1,6 +1,17 @@
 # Island Troll Tribes Change Log
 
 
+## [v2.103c](/maps/2.103c/download)
+
+ - Mage masher mana burn increased to 6
+ - Battle armor stats fixed
+ - Acid potion recipe fixed
+ - Storage hut is now usable by allies
+ - Missed from last version: Medallions of Courage may drop more than once per game. (This is what "Fix Medallion" meant)
+ - Missed from last version: Removed Dark Spear from medallion loottable, replaced with Steel Ingot. Drop rates are 4:1 medallion:ingot.
+ - Missed from last version: Fixed Battle Shield silence
+ - Missed from last version: There is now a merchant behind each aligator man
+
 ## [v2.103b](/maps/2.103b/download)
 
  - Tinder removed from first boat, replaced with storage hut for 5g

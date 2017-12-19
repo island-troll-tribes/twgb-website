@@ -1,6 +1,16 @@
 # Island Troll Tribes Change Log
 
 
+## [v2.103d](/maps/2.103d/download)
+
+ - Fixed the bug where your troll died if a player on the opposing tribe left (sorry Srup)
+ - Fixed class random probabilities
+ - Fixed using -gold with player names
+ - Gold is now distributed when a player leaves amongst their teammates
+ - EMP is no longer consumable, has a 5 minute cool down, duration reduced to 45 s from 60 s, destroys living clay wards with 1200 range, recipe changed to Mana Crystal, Mana Crystal, Spirit of Wind, Spirit of Water
+ - Witch Doctor's Hut recipe changed to Stick, Mana Crystal, Stick, Mana Crystal, Stick
+ - You can now lock your camera on your troll with -l, unlock with -u or ctrl+c
+
 ## [v2.103c](/maps/2.103c/download)
 
  - Mage masher mana burn increased to 6

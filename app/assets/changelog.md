@@ -1,6 +1,13 @@
 # Island Troll Tribes Change Log
 
 
+## [v2.103e](/maps/2.103e/download)
+
+ - Fixed bee hive having two charges by default
+ - Fixed -or mode always being on
+ - Beast Master no longer needs to last hit
+ - Blowgun can now be loaded in inventory
+
 ## [v2.103d](/maps/2.103d/download)
 
  - Fixed the bug where your troll died if a player on the opposing tribe left (sorry Srup)

@@ -1,12 +1,22 @@
 # Island Troll Tribes Change Log
 
 
+## [v2.103f](/maps/2.103f/download)
+
+ - Bear rate decreased by 1/3
+ - Elk rate increased by 1/4
+ - Basic spears now cost 4g
+ - Spears now give trolls a stacking magic resistance of 35% capped at 90%
+ - Blowgun and stone now share cooldown with spears and fireball scroll
+ - (Hopefully) fixed the disappearing spear bug
+ - Juggernaut's fortitude and +2 armor bonus abilities removed
+
 ## [v2.103e](/maps/2.103e/download)
 
  - Fixed bee hive having two charges by default
  - Fixed -or mode always being on
  - Beast Master no longer needs to last hit
- - Blowgun can now be loaded in inventory
+ - Blowgun can now be loaded in inventory (thistles only)
 
 ## [v2.103d](/maps/2.103d/download)
 

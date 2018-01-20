@@ -10,6 +10,7 @@
  - Blowgun and stone now share cooldown with spears and fireball scroll
  - (Hopefully) fixed the disappearing spear bug
  - Juggernaut's fortitude and +2 armor bonus abilities removed
+ - Supersub level requirement raised to 9 from 8
 
 ## [v2.103e](/maps/2.103e/download)
 

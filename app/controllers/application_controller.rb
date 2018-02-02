@@ -39,8 +39,6 @@ class ApplicationController < ActionController::Base
       raise e
     end
 
-    p 'got data'
-
     send_data data, filename: filename, disposition: :attachment
   end
 end

@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS twgb-test;
+GRANT ALL PRIVILEGES ON twgb-test.* TO 'twgb'@'%' IDENTIFIED BY 'twgb';

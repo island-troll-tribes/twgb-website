@@ -1,6 +1,69 @@
 # Island Troll Tribes Change Log
 
 
+## [v3.0f](/maps/3.0f/download)
+
+ - Terrain changes
+ - Blow gun stock reduced to 1
+ - Ships now stop at 6 places around the map for 5 seconds, up from 3
+ - Replaced Trueform with Shapeshifter, still in progress
+ - Priest has a suite of new/different abilities
+ - Bee hive recipe only makes 1 bee hive now down from 2
+ - Armored Skin/Replenish Health still need to be coded
+
+## [v3.0e](/maps/3.0e/download)
+
+ - Boats now stop at 4 points around the middle circle for 3 seconds, at a point in front of each major island
+ - Boat paths are now fixed, they go around the center island and back to where they spawned
+ - The first boats will either be from N and E or S and W and then they alternate
+ - The north-west island now has a new ramp connecting to north-east
+ - The class-selection totems have been moved towards the center of the island
+
+## [v3.0d](/maps/3.0d/download)
+
+ - Fixed bugs related to the map script not being exported
+
+## [v3.0c](/maps/3.0c/download)
+
+ - Mammoth now has True Sight
+ - Hydra Altar moved behind the Mammoth
+ - Hydra now swim to the summoning altar rather than leaving the map
+ - Defender Energy stun reduced from 1s on trolls to 0.1s
+ - Hunter nets, workshop nets, and ensnare trap nets no longer go through AMS
+ - Priest gets AMS at level 2
+ - Slight terrain changes on middle mound and bottom left of the south east island
+ - Removed an additional 1-9 energy drain when affected by all 3 depression buffs
+ - Boats now spawn from all sides of the map, but only from two sides at once
+ - The first two boats to spawn will be randomly selected from north or west and south or east, then alternate
+ - Boats won't spawn till both boats of the same tier leave the map
+ - You no longer lose energy from depression in cyclone (was a bug)
+ - Reduce meat lowered from 0-2 meat to 0-1 meat
+ - Added a thistle bush to bottom left of south east island
+ - You can't place wards behind Craft Master 5000 anymore
+ - 6v6 has replaced 4v4v4 as the default format
+
+## [v3.0b](/maps/3.0b/download)
+
+ - Many terrain changes. Play the map with 'iseedeadpeople'
+
+## [v3.0a](/maps/3.0a/download)
+
+ - Many terrain changes. Play the map with 'iseedeadpeople'
+
+## [v2.104a](/maps/2.104a/download)
+
+ - Anti magic shield now grants 300 magic damage abosrption rather than magic immunity
+ - Stock of all items from merchants & ships reduced to 1
+ - Stock replenish interval of ensnare trap kits and omnidefender kits increased from 30 s to 120 s
+
+## [v2.103h](/maps/2.103h/download)
+
+ - Fixed spear bug
+
+## [v2.103g](/maps/2.103g/download)
+
+ - Fixed spear bug
+
 ## [v2.103f](/maps/2.103f/download)
 
  - Bear rate decreased by 1/3

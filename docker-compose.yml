@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+
+    db:
+        image: mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: twgb-host
+            MYSQL_USER: twgb
+            MYSQL_PASSWORD: twgb
+        ports:
+            - 3306:3306
+        build:
+          dockerfile: Dockerfile-MySQL
+          context: .
+
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 5050:8080

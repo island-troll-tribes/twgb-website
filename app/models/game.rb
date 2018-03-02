@@ -37,4 +37,33 @@ class Game < ApplicationRecord
 
     return query
   end
+
+  def rollback_elo
+    W3mmdPlayer.transaction do
+      w3mmd_players.each do |player|
+        if player.elochange.present?
+          score = W3mmdEloScore.where(name: player.name, category: player.category).first
+          if player.flag == 'winner'
+            score.decrement(:wins)
+          elsif player.flag == 'loser'
+            score.decrement(:losses)
+          end
+          score.decrement(:games)
+          score.decrement(:score, player.elochange)
+          score.save!
+          player.update!(elochange: nil)
+        end
+      end
+    end
+  end
+
+  def recalculate_elo
+    self.class.transaction do
+      games.where('id >= ?', id).each do |game|
+        game.rollback_elo
+      end
+
+      W3mmdEloGamesScored.where('gameid >= ?', id).destroy_all
+    end
+  end
 end

@@ -5,11 +5,23 @@
 
  - Terrain changes
  - Blow gun stock reduced to 1
- - Ships now stop at 6 places around the map for 5 seconds, up from 3
+ - Ships now stop at 6 places around the map for 10 seconds, up from 3
  - Replaced Trueform with Shapeshifter, still in progress
  - Priest has a suite of new/different abilities
  - Bee hive recipe only makes 1 bee hive now down from 2
- - Armored Skin/Replenish Health still need to be coded
+ - Stone armor duration reduced to 30 s from 45 s
+ - Stone armor now grants 4 armor down from 5
+ - Fervor armor gain reduced to 8
+ - Clay Explosion now creates 8-12 wards up from 6-10
+ - Clay Explosion wards now are always reachable
+ - Battle Axe silence replaced with Purge
+ - Scout movement speed increased from 290 to 300
+ - Radar Scout movement speed increased from 315 to 330
+ - Hypnotist and Elementalist movement speed reduced from 300 to 285
+ - Mana Burn increased from 6 to 10 energy
+ - Increased mana cost of Elementalist's Disruptor Magnet from 15 to 30
+ - Reduced duration of Elementalist's Electromagnet from 2 s to 1 s
+ - Jealousy attack command frequency decreased from 5/s to 2/s and it has a visible effect
 
 ## [v3.0e](/maps/3.0e/download)
 

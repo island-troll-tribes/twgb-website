@@ -1,6 +1,26 @@
 # Island Troll Tribes Change Log
 
 
+## [v3.0h](/maps/3.0h/download)
+
+ - Sage/Booster/Master-Healer now have the same Anti-Nagic Shield as Priest.
+ - Fixed the skin messages being printed to everyone
+
+## [v3.0g](/maps/3.0g/download)
+
+ - Removed deselection trigger for pets and buildings
+ - Increased Shapeshifter wolf form lifesteal aura from 8% to 16%
+ - Increased Shapeshifter panther form damage gain aura from 10% to 35%
+ - Reduced Shapeshifter tiger form damage from 15 to 13
+ - Increased Shapeshifter tiger form attack speed from 1.5 to 1.75
+ - Increased Shapeshifter panther form attack speed from 1.5 to 1.75
+ - All buffs removed before entering duel arena for forced-duel
+ - New custom EXP system (really similar to previous one, for now)
+ - Beast Master's aura should no longer scare elk away
+ - Hawk night vision increased
+ - Work in progress gatherer salve system (careful which order you pick up items in!)
+ - Custom skins for those who've earned them!
+
 ## [v3.0f](/maps/3.0f/download)
 
  - Terrain changes

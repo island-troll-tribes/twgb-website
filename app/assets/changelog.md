@@ -1,6 +1,11 @@
 # Island Troll Tribes Change Log
 
 
+## [v3.0j](/maps/3.0j/download)
+
+ - Fixed bugged stone armor scroll, reducing armor gain from 7 to 4 and duration from 45 s to 30 s
+ - Fixed bugged trade boat system
+
 ## [v3.0i](/maps/3.0i/download)
 
  - Anti-Magic Potion now has the same Anti-Magic Shield as Priest (not resist-all)

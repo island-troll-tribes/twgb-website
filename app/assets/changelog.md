@@ -1,9 +1,17 @@
 # Island Troll Tribes Change Log
 
 
+## [v3.0i](/maps/3.0i/download)
+
+ - Anti-Magic Potion now has the same Anti-Magic Shield as Priest (not resist-all)
+ - Nether duration on heroes reduced from 25 s to 15 s
+ - Nether cooldown increased from 0 s to 20 s
+ - Cyclone duration on heroes reduced from 6 s to 4 s
+ - Cyclone can now target self and allies
+
 ## [v3.0h](/maps/3.0h/download)
 
- - Sage/Booster/Master-Healer now have the same Anti-Nagic Shield as Priest.
+ - Sage/Booster/Master-Healer now have the same Anti-Magic Shield as Priest.
  - Fixed the skin messages being printed to everyone
 
 ## [v3.0g](/maps/3.0g/download)

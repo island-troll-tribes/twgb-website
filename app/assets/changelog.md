@@ -1,6 +1,10 @@
 # Island Troll Tribes Change Log
 
 
+## [v3.0k](/maps/3.0k/download)
+
+ - Made map work on patch 1.29
+
 ## [v3.0j](/maps/3.0j/download)
 
  - Fixed bugged stone armor scroll, reducing armor gain from 7 to 4 and duration from 45 s to 30 s

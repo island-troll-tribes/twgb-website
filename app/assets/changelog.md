@@ -1,6 +1,25 @@
 # Island Troll Tribes Change Log
 
 
+## [v3.0l](/maps/3.0l/download)
+
+ - Mana burn reduced from 10 to 6
+ - Mage Masher silence chance reduced from 21% to 16%
+ - Fixed thief's bush waterfalls which were bugging units
+ - Master Healer's Reincarnation ability now costs 100 mana
+ - Master Healer's Replenish Health ability regen increased from 2 hp/s to 5 hp/s
+ - Master Healer's Replenish Health ability mana cost increased from 2 mp/s to 5 mp/s
+ - Healing Wave health restored increased from 30 to 50
+ - Ranged Heal cooldown decreased from 15 s to 5 s, cost increased from 10 mp to 15 mp
+ - Shapeshifter (Panther) ms reduced from 350 to 340
+ - Shapeshifter (Tiger) ms reduced from 360 to 315
+ - Spirit Wards now die after reviving your troll
+ - Spirit Ward sell price reduced from 11 g to 3 g
+ - Blow Guns no longer share cool-down with Spears
+ - Trolls only drop 1 corpse
+ - Added -start-with-ward mode
+ - Added -coral-blockers mode
+
 ## [v3.0k](/maps/3.0k/download)
 
  - Made map work on patch 1.29

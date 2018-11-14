@@ -1,6 +1,146 @@
 # Island Troll Tribes Change Log
 
 
+## [v3.1h](/maps/3.1h/download)
+
+ - Standardized all Quick Make ability cooldowns to be 0.5s
+ - Added Battle Gear and Poison Spear Quickmakes to Workshop
+ - Removed Bee Hive Quickmake from Workshop and deleted ability from Build (As it is now a mixing pot Recipe)
+ - Added Hotkeys QWERASDFZXCV to Workshop Quickmakes
+ - Added Dark Spear Quickmake for Armory
+ - Added Hotkeys QWERASDFZXCV to Armory Quickmakes
+ - Added Tsumani Scroll, Cyclone Scroll and all 3 Cloak Quickmakes to Witch Doctors Hut
+ - Added Hotkeys QWERASDFZXCV to WDH Quickmakes
+ - Added Hotkeys QWE to Tannery make abilities
+ - Updated Tannery Make descriptions
+ - Fixed Battle Gloves Code preventing them from being created
+ - Added Mana Crystal to Anabolic Boots Recipe
+ - Standardized Battle Spear Spirit/MC order (For Future Use)
+ - Added Mixing Pot Recipes
+ - Updated Battle Spear Damage and Description for future possible use.
+ - Boot Icons Updated - Elk Hide, Wolf Hide, Bear Hide, Bone, Panther Hide (Ready for Implementation)
+ - Updated description for EMP
+ - Reduced EMP cooldown from 300s to 180s
+ - Added Quick Make Bone Shield to armory
+ - Updated Poison Spears Descriptions
+ - Added Poison Spear Icon
+ - Added Ultra Poison Spear Icon
+ - Balanced Poison Spears
+
+## [v3.1g](/maps/3.1g/download)
+
+ - Pinion of fire now grants guaranteed max movespeed instead of 60
+ - Pinion of fire now has a lesser version of the cloak of flames, does 6 dmg/sec
+ - Pinion of shadow now can be used to windwalk for 6 seconds on a 45s cooldown
+ - Pinion of shadow now grants 15% evasion
+ - Pinion of pain now also degens mana by 1/second
+ - Pinion of shadow and Pinion of pain both have +5 stats instead of +4
+ - Healing potion I is now the only recipe, is targetable and heals 65 hp each
+ - Mana potion I is now the only mana potion
+ - Rendo now gets all the shapeshifter auras upon subbing
+ - Cloak of Flames now has red particles to avoid confusion with anti magic shell
+ - Sally won't be selling any more fucking seashells (seashells are all gone from the terrain)
+ - Toned down the waterfalls and some of the rocks around the map
+ - You can no longer gather from a thief bush using just cloak
+ - The size of all buildings has now been normalized, every building can pass up to 3 buildings away
+ - Snare traps now have a hero only attack that does 1-3 dmg every 1 second
+ - Trolls now gain 10 ms from subbing but gain 7.5 ms per agility point
+
+## [v3.1f](/maps/3.1f/download)
+
+ - Welcome to pauls world, bitch
+ - Added rotten tree directly south of SE spawn point
+ - Cleaned up original SE-NE river access
+ - Cloaks now have new active abilities removed passive component
+ - Thief's medallion no longer has a chance to proc random effects
+ - Oh no! vines and stones grew out around middle preventing mid basing for the most part
+ - NW to NE added an extra choke point
+ - Battle recipes changed to be consistent (Wind, Water, Mana Crystal
+ - Ensnare traps attack range down to 400, and only nets heroes for 1.50 seconds
+ - Leveling up no longer grants movement speed per agility
+
+## [v3.1e](/maps/3.1e/download)
+
+ - Fix Storm Earth and Fire (removed lightning component)
+
+## [v3.1d](/maps/3.1d/download)
+
+ - Fix terrain
+
+## [v3.1c](/maps/3.1c/download)
+
+ - Experience system now scales properly with levels (there is no advantage to staying level one anymore)
+ - Fish give (minimal) experience
+ - Thief Bush spawn Healing Potion IV replaced with Healing Potion II (5% chance)
+ - Thief Blur miss chance duration reduced from 20 s to 3 s and cooldown increased from 30 s to 40 s
+ - Terrain changes
+ - The One's hit point base lowered to 500 from 900
+ - The One's stats per level reduced to 3 from 5
+ - Aligator Man level increased to 15, added abilities Resistant Skin & Hardened Skin
+ - Gatherer move speed increased from 285 to 300
+ - Removed gold for randoming
+ - Sage move speed increased from 300 to 310
+
+## [v3.1b](/maps/3.1b/download)
+
+ - Fixed building cancellation
+ - Fervor Potion now no longer stuns (was 100% chance) and no longer entangles (was 50% chance), now 100% chance for shadow strike like ability
+
+## [v3.1a](/maps/3.1a/download)
+
+ - Terrain at SE entrance to NE revamped
+ - The One has been removed from all initial positions and replaced with a summoning area for it
+ - The troll merchant now sells the follow items: Anabolic Potion, Potion of Twin Islands, Disease Potion, Drunk's Potion, Dark Rock, Essence of Bees, Ultra Poison Spear, Steel Ingot, Acid Bomb, Steel Shield, Steel Axe, Magic
+ - Steel Coat Omnicure replaced with Cure All (90 s cool-down)
+ - The One has increased magic resistance and hardened skin
+ - The One is resummonable
+ - The One levels for every minute that it is alive
+ - The One gains 5 of each stat every level
+ - Mage Spells are now using new code written in Wurst (thanks Bannar)
+ - Null damage changed to 25% attack speed reduction, 10% move speed reduction, 50% damage reduction, 10 s duration heroes, 30 s duration hostiles, 45 s cooldown
+ - Fixed the clay ward drop dup bug
+ - The One and Disco Duck no longer glitch on trying to cast net when the target has Anti-Magic Shield
+ - Fixed items that gave move bonus 60 to actually do so (was 50)
+ - Nets now stack to 9
+ - Hypnosis no longer steals exp
+ - The killing unit will now always get exp (unless the killing unit was a dummy)
+ - Sage spells split into two spell books (new one has hotkey 'W') and Reincarnation added
+ - Aligator Man is now level 12
+ - Reduced Disease cost from 45 g to 40 g
+ - Increased Acid cost from 30 g to 40 g
+ - Decreased EoB cost from 60 g to 45 g
+ - Aligator Man reduced to level 12
+ - Aligator Man drops 100 g
+ - Hydraac Fins now have Agile Feet (phase ability) on 30 s cooldown with 3 s duration instead of -20% ms aura and give +4 to all stats
+ - Hydra Claws now have Tsunami active and +35% attack speed increase and +4 to all stats
+ - Hydra babies drop 3 scales each
+
+## [v3.0n](/maps/3.0n/download)
+
+ - Mammoth now has the following drops: 100% Medallion of Courage, 100% 2x Horns of the Mammoth, 25% Steel Ingot, 25% Ancient Bow
+ - Disco Duck now has the following drops: 100% Medallion of Courage, 100% one of the three Pinions, 100% 2x Steel Ingot
+ - Anti-Magic Shell modified from 300 damage, 0 s cooldown to 100 damage, 1 s cooldown
+ - Anti-Magic Potion recipe changed from 2 special to 1 special and a butsu
+ - Battle Gloves attack speed bonus increased from 25 to 30
+ - Mage Masher 16% silence chance replaced with an active silence on 45 s cooldown which lasts 4 s with 350 range and 225 AoE
+ - Battle Armor now gives +7 armor reduced from +8
+ - Battle Axe purge range increased from 100 to 250
+ - Steel Coat armor increased from +6 to +8, can actively cast Omnicure (50 s cooldown)
+ - Omnicure Potion cooldown reduced from 80 s to 50 s
+ - Omnitower can now use sonar-compass, anti-magic potion, bee hive, skeleton scroll, EMP
+ - Instant death replaced with stripping one level on Magic (10% chance)
+ - Added back an improved version of the -test-mode (-tm) command
+ - Removed Baby Mammoth
+ - Fixed ward bug where it didn't die after respawning
+ - Added a -trade-routes command to ping the routes trade ships can take
+ - Added a -ping command to ping locations of bushes & merchants (which isn't 100% accurate)
+ - Added a -as command to print the selected unit's attack speed
+
+## [v3.0m](/maps/3.0m/download)
+
+ - Fixed thief's bush waterfalls which were bugging units
+ - Fixed bug which was causing spirit wards to reset and cancel revives
+
 ## [v3.0l](/maps/3.0l/download)
 
  - Mana burn reduced from 10 to 6
@@ -488,66 +628,21 @@
 
 ## [v2.92b](/maps/2.92b/download)
 
- - Fixed weird pathing related to selling items at stop directly between NE and SE islands
- - Reduced cost of blowgun from 8 to 5
- - Increased stock maximum of blowgun from 1 to 2
- - Decreased stock replenish time of blowgun from 180 s to 30 s
- - Reduced stock replenish time of all buildings to 30 s
- - Diseased meat now heals for 30 HP like the tooltip says
- - Increased spirit ward pathing size to 4x4 (fire is 2x2)
- - Reduced spirit ward HP to 100
- - Increased stone armor scroll armor bonus from 5 to 7 and fixed tooltip
- - Removed hero pickers
- - Smoke meat tooltip fixed
- - Smoke meat channeling reduced from 30 s to 15 s
- - Smoke house now has 6 slots
- - Smoke house no longer requires shared control if you don't own it
- - Living clay wards no longer count as a "scroll" in your inventory
- - Teleport (blink) now has a 0.2 s cast time
- - Anabolic boots now have teleport
- - Thief may no longer use anabolic boots
- - Fixed ward bug (if the ward was killed while you were reviving your team could no longer revive)
 
 ## [v2.92a](/maps/2.92a/download)
 
- - New terrain between NE and NW islands
- - Changed the terrain on upper left side of NW island
- - Added two acorn bushes to SE island
- - Battle axe is now a regular item; not exclusively in OP mode
- - Fixed being able to teleport beacon out of duel arena
- - Fixed (hopefully) ships getting stuck at certain destinations
- - Trade ships now come in a fixed order and there are a total of 6 variations
 
 ## [v2.91a](/maps/2.91a/download)
 
- - Removed Ancient Stone Scroll item from the game
- - Removed Drunken Troll class from the game
- - Smoke house control is now shared and its pickup corpses ability has been removed. The smoke house now have only 1 inventory slot and the smoking meat spell now takes thirty seconds
- - Smoked meat now heal for the same amount as cooked meat (50hp). Smoked meat now stacks up to 10 and they no longer have an inventory limit
- - Changed cloak of flame Area of Effect from 175 to 300 and fixed its tooltip indicating wrong damage per second
- - You can now get supersub when reaching level 8 of subbed class; getting supersub with the medaillon is still active.
- - Removed Patrol Command to free up some space fixing warrior and juggernaut spell overload by the same occasion
 
 ## [v2.90c](/maps/2.90c/download)
 
- - Removed the agile feet ability from steel boots and anabolics boots
- - Anabolic boots movement speed bonus changed from 100 to 200
 
 ## [v2.90b](/maps/2.90b/download)
 
- - Fixed the spamming error message, hopefully
- - Reworked Drunken troll and Troll brewmaster
- - Fixed the skin of masterhealer
- - Added two new scroll: Scroll of swiftness and scroll of ancient stone
- - Reworked anabolic boots and steel boots with a new ability: agile feet
- - Changed content sold in boats allowing players to buy the new scrolls and removing entangle scroll/steel ingot
 
 ## [v2.90a](/maps/2.90a/download)
 
- - Removed sleep protection reminder unless you've got hints on
- - Added a new class and Two subclass
- - Changed Guard Distance back to normal
- - Fixed Sonar Compass and old selection Glitch
 
 ## [v2.89b](/maps/2.89b/download)
 

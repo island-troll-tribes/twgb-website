@@ -1,6 +1,15 @@
 # Island Troll Tribes Change Log
 
 
+## [v3.1i](/maps/3.1i/download)
+
+ - Fix east trade boat's first stop
+ - Added -cl alias for -changelog
+ - Fixed Bone boots green icon on noob island
+ - Fixed Speed Salve displaying wrong recipe
+ - Moved Anabolic Potion Recipe from Defensive Potions 1 to Utility Potions
+ - Added Mana Crystal to Anabolic Boots Recipe
+
 ## [v3.1h](/maps/3.1h/download)
 
  - Standardized all Quick Make ability cooldowns to be 0.5s
@@ -48,7 +57,6 @@
 
 ## [v3.1f](/maps/3.1f/download)
 
- - Welcome to pauls world, bitch
  - Added rotten tree directly south of SE spawn point
  - Cleaned up original SE-NE river access
  - Cloaks now have new active abilities removed passive component

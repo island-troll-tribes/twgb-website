@@ -1,6 +1,14 @@
 # Island Troll Tribes Change Log
 
 
+## [v3.1j](/maps/3.1j/download)
+
+ - Fix east trade boat's first stop (again)
+ - -g <name> now will pass all your gold to that person by default
+ - Dark spear return rate reduced from 66% to 40%
+ - Dark spear mana burn changed from 20% for 20-70 and 80% for 20-40 to 40-60
+ - Added -recipes command to see recipe island
+
 ## [v3.1i](/maps/3.1i/download)
 
  - Fix east trade boat's first stop

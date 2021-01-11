@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'slim-rails', '~> 3.1'
-gem 'redcarpet', '~> 3.4'
+gem 'redcarpet', '~> 3.5'
 gem 'net-scp', '~> 1.2'
 gem 'kaminari', '~> 1.0'
 gem 'bootstrap-kaminari-views'
